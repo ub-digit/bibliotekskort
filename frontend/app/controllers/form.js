@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  methods: Ember.computed('lang', function() {
+  methods: Ember.computed(function() {
     return [{
         'method': 'Epost',
         'value': 1
