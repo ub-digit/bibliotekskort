@@ -24,3 +24,6 @@
 config/database.yml
 config/config_secret.yml
 config/deploy.yml
+
+.DS_Store
+../.DS_Store
