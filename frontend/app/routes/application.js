@@ -12,7 +12,7 @@ export default Ember.Route.extend({
   },
 
   model() {
-    //return this.store.find('config', 1);
+    return this.store.findAll('message-pref');
   },
 
 

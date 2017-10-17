@@ -1,5 +1,6 @@
 import ActiveModelAdapter from 'active-model-adapter';
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default ActiveModelAdapter.extend({
   namespace: '/api',
