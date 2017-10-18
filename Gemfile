@@ -32,6 +32,7 @@ gem 'puma', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem "ember-cli-rails"
+gem "rest-client"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
