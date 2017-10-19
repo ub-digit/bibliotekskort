@@ -11,6 +11,11 @@ export default ActiveModelAdapter.extend({
               errors:payload.errors};
     }
 
+     if (499 === status) {
+      return {status: "499",
+               errors:payload.errors};
+    }
+
      if (403 === status) {
       return {status: "403",
                errors:payload.errors};
