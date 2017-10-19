@@ -22,14 +22,14 @@ class Api::PatronsController < ApplicationController
     accept_text = params[:patron][:accept_text]
 
     error_list = Array.new
-    error_list.push({code: "MISSING_PERSONALNUMBER", detail: "personalnumber is missing."}) if personalnumber.blank?
-    error_list.push({code: "MISSING_CATEGORYCODE", detail: "categorycode is missing."}) if categorycode.blank?
-    error_list.push({code: "MISSING_SURNAME", detail: "surname is missing."}) if surname.blank?
-    error_list.push({code: "MISSING_ADDRESS", detail: "address is missing."}) if address.blank?
-    error_list.push({code: "MISSING_CITY", detail: "city is missing."}) if city.blank?
-    error_list.push({code: "MISSING_ACCEPT_TEXT", detail: "accept_text is missing."}) if accept_text.blank?
+    error_list.push({field: "personalnumber", code: "MISSING_PERSONALNUMBER", detail: "personalnumber is missing."}) if personalnumber.blank?
+    error_list.push({field: "categorycode", code: "MISSING_CATEGORYCODE", detail: "categorycode is missing."}) if categorycode.blank?
+    error_list.push({field: "surname", code: "MISSING_SURNAME", detail: "surname is missing."}) if surname.blank?
+    error_list.push({field: "address", code: "MISSING_ADDRESS", detail: "address is missing."}) if address.blank?
+    error_list.push({field: "city", code: "MISSING_CITY", detail: "city is missing."}) if city.blank?
+    error_list.push({field: "accept_text", code: "MISSING_ACCEPT_TEXT", detail: "accept_text is missing."}) if accept_text.blank?
 
-    error_list.push({code: "PERSONALNUMBER_EXISTS", detail: "personalnumber already exists."}) if Patron.exists?(personalnumber)
+    error_list.push({field: "personalnumber", code: "PERSONALNUMBER_EXISTS", detail: "personalnumber already exists."}) if Patron.exists?(personalnumber)
 
     if error_list.present?
       error_msg(ErrorCodes::UNPROCESSABLE_ENTITY, "Invalid parameters.", error_list)
