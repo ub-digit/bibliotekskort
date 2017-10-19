@@ -1,23 +1,37 @@
 class Patron
-
-  def personal_number_exist?
-    # TBD
-  end
-
   def self.add(parameter_list)
-    base_url = APP_CONFIG['koha']['base_url']
-    user =  APP_CONFIG['koha']['user']
-    password =  APP_CONFIG['koha']['password']
-
-    url = "#{base_url}/members/create"
-    response = RestClient.post(url, parameter_list.merge({userid: user, password: password}))
+    config = get_config
+    url = "#{config[:base_url]}/members/create"
+    response = RestClient.post(url, parameter_list.merge({userid: config[:user], password: config[:password]}))
     if response && (response.code == 200 || response.code == 201)
       return {code: 201, msg: "Success"}
     else
       return {code: 500, msg: "General error"}
     end
   #rescue => error
-    #return {code: 500, msg: "General error"}
+  #  return {code: 500, msg: "General error"}
   end
 
+  def self.exists?(personalnumber)
+    config = get_config
+    params = {userid: config[:user], password: config[:password], personalnumber: personalnumber}.to_query
+    url = "#{config[:base_url]}/members/check?#{params}"
+    response = RestClient.get(url)
+    if (response && response.code == 200)
+      xml = Nokogiri::XML(response.body).remove_namespaces!
+      return !(xml.search('//response/uniq').text.present? && xml.search('//response/uniq').text == "true")
+    else
+      return false
+    end
+  #rescue => error
+  #  return false
+  end
+
+  def self.get_config
+    {
+      base_url: APP_CONFIG['koha']['base_url'],
+      user: APP_CONFIG['koha']['user'],
+      password: APP_CONFIG['koha']['password']
+    }
+  end
 end
