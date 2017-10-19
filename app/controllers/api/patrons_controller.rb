@@ -29,6 +29,8 @@ class Api::PatronsController < ApplicationController
     error_list.push({code: "MISSING_CITY", detail: "city is missing."}) if city.blank?
     error_list.push({code: "MISSING_ACCEPT_TEXT", detail: "accept_text is missing."}) if accept_text.blank?
 
+    error_list.push({code: "PERSONALNUMBER_EXISTS", detail: "personalnumber already exists."}) if Patron.exists?(personalnumber)
+
     if error_list.present?
       error_msg(ErrorCodes::UNPROCESSABLE_ENTITY, "Invalid parameters.", error_list)
       render_json
