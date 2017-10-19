@@ -2,6 +2,15 @@
 <p>{{t 'patron.sub_header'}}</p>
 <p class="small">{{t 'patron.important_info'}}</p>
 
+{{#if errors}}
+  <ul>
+  {{#each errors.errors as |error|}}
+      <li>{{error.code}}</li>
+  {{/each}}
+  </ul>
+{{/if}}
+
+
 <form id="patron-registration-form">
     <div class="row">
     <div class="col-xs-12 col-sm-3">

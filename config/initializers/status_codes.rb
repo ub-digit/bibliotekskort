@@ -31,7 +31,7 @@ module ErrorCodes
 
   # Used when object validation fails
   UNPROCESSABLE_ENTITY = {
-    status: 422,
+    status: 499,
     code: "UNPROCESSABLE_ENTITY"
   }
 

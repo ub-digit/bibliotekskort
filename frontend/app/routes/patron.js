@@ -6,14 +6,14 @@ export default Ember.Route.extend({
       patron: this.store.createRecord('patron', {
         personalnumber: '',
         categorycode: 'FC',
-        branchcode: 'test',
-        surname: 'larsson',
-        firstname: 'johan',
-        address: 'testadress',
-        address2: 'testadress2',
-        zipcode: '12341423',
-        city: 'Borås',
-        B_address: 'B_address',
+        branchcode: '',
+        surname: '',
+        firstname: '',
+        address: '',
+        address2: '',
+        zipcode: '',
+        city: '',
+        B_address: '',
         B_address2: '',
         B_city: '',
         B_zipcode: '',
@@ -32,7 +32,7 @@ export default Ember.Route.extend({
     submit() {
       let model = this.controller.get('model.patron');
       var self = this;
-      model.save().then(() => {
+      model.save().then((response) => {
         this.transitionTo('confirm');
       }, (error) => {
         this.get('controller').set('errors', error.errors);
