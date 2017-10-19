@@ -9,11 +9,9 @@ class Api::PatronsController < ApplicationController
     surname = params[:patron][:surname]
     firstname = params[:patron][:firstname]
     address = params[:patron][:address]
-    address2 = params[:patron][:address2]
     zipcode = params[:patron][:zipcode]
     city = params[:patron][:city]
     b_address = params[:patron][:b_address]
-    b_address2 = params[:patron][:b_address2]
     b_city = params[:patron][:b_city]
     b_zipcode = params[:patron][:b_zipcode]
     phone = params[:patron][:phone]
@@ -44,11 +42,9 @@ class Api::PatronsController < ApplicationController
       surname: surname,
       firstname: firstname,
       address: address,
-      address2: address2,
       zipcode: zipcode,
       city: city,
       B_address: b_address,
-      B_address2: b_address2,
       B_city: b_city,
       B_zipcode: b_zipcode,
       phone: phone,

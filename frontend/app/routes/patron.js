@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({ 
       patron: this.store.createRecord('patron', {
-        personalnumber: '198333111999',
+        personalnumber: '',
         categorycode: 'FC',
         branchcode: 'test',
         surname: 'larsson',
@@ -14,13 +14,13 @@ export default Ember.Route.extend({
         zipcode: '12341423',
         city: 'Borås',
         B_address: 'B_address',
-        B_address2: 'B_address2',
-        B_city: 'B_city',
-        B_zipcode: 'B_zipcode',
-        phone: '1234532453452',
-        mobile: '1234234',
-        email: 'johan@asdf.com',
-        accept_text: 'yes',
+        B_address2: '',
+        B_city: '',
+        B_zipcode: '',
+        phone: '',
+        mobile: '',
+        email: '',
+        accept_text: '',
       }),
       messagePref: this.get('store').findAll('message-pref'),
     });
