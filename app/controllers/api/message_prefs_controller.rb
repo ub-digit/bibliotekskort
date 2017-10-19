@@ -2,8 +2,10 @@ class Api::MessagePrefsController < Api::ApiController
 
   def index
     @response[:message_prefs] = [
-      {id: "1", label_sv: 'label_sv_content_1', label_en: 'label_en_content_1'},
-      {id: "2", label_sv: 'label_sv_content_2', label_en: 'label_en_content_2'}
+      {id: "1", label_sv: 'Epost', label_en: 'Epost'},
+      {id: "2", label_sv: 'Sms och epost', label_en: 'Sms och epost'},
+      {id: "3", label_sv: 'Sms', label_en: 'Sms'},
+      {id: "4", label_sv: 'Brev till adress', label_en: 'Brev till adress'},
     ]
     render_json
   end
