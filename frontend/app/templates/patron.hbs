@@ -1,0 +1,140 @@
+<h1>{{t 'patron.header'}}</h1>
+<p>{{t 'patron.sub_header'}}</p>
+<p class="small">{{t 'patron.important_info'}}</p>
+
+<form id="patron-registration-form">
+    <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="form-group">
+        <label for="personalnumber">{{t 'patron.personalnumber'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{input name="personalnumber" placeholder="19770125-4975" id="personalnumber" autofocus="true" value=model.patron.personalnumber class="form-control"}}
+        <span class="help-block">{{t 'patron.personalnumber_help_block'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="firstname">{{t 'patron.firstname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{input name="firstname" id="firstname" value=model.patron.firstname class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="surname">{{t 'patron.surname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{input name="surname" id="surname" value=model.patron.surname class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2>{{t 'patron.address1_header'}}</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      <div class="form-group">
+        <label for="address">{{t 'patron.address'}}</label>
+        {{input name="address" id="address" value=model.patron.address class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-2">
+      <div class="form-group">
+        <label for="zipcode">{{t 'patron.zipcode'}}</label>
+        {{input name="zipcode" id="zipcode" placeholder="41436" value=model.patron.zipcode class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="form-group">
+        <label for="city">{{t 'patron.city'}}</label>
+        {{input name="city" id="city" placeholder="Göteborg" value=model.patron.city class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <h2>{{t 'patron.address2_header'}}</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      <div class="form-group">
+        <label for="B_address">{{t 'patron.B_address'}}</label>
+        {{input name="B_address" id="B_address" value=model.patron.B_address class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-2">
+      <div class="form-group">
+        <label for="B_zipcode">{{t 'patron.B_zipcode'}}</label>
+        {{input name="B_zipcode" id="B_zipcode" placeholder="41436" value=model.patron.B_zipcode class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="form-group">
+        <label for="B_city">{{t 'patron.B_city'}}</label>
+        {{input name="B_city" id="B_city" placeholder="Göteborg" value=model.patron.B_city class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="mobile">{{t 'patron.mobile'}}</label>
+        {{input name="mobile" id="mobile" value=model.patron.mobile class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="phone">{{t 'patron.phone'}}</label>
+        {{input name="phone" id="phone" value=model.patron.phone class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="email">{{t 'patron.email'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{input name="email" id="email" value=model.patron.email class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="message_pref">{{t 'patron.message_pref'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{#x-select class="form-control" value="1" action=(action "selectMessagePref") as |xs|}}
+            {{#each model.messagePref as |pref|}}
+              {{#xs.option value=pref.id}}{{pref.label_sv}}{{/xs.option}}
+            {{/each}}
+        {{/x-select}}
+        <span class="help-block">{{t 'patron.message_pref_help_block'}}</span>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="checkbox">
+        <label for="accept_terms">
+          {{input type="checkbox" name="accept_terms" checked=terms_accepted}}
+           {{t 'patron.accept_terms'}} <span class="text-danger">{{t 'patron.is_required'}}</span>
+        </label>
+        <span class="help-block">{{t 'patron.accept_terms_help_block'}}</span>
+        <span class="help-block">{{t 'patron.pul_link'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <button type="submit" {{action 'submit'}} class="btn btn-primary">{{t 'patron.submit'}}</button>
+    </div>
+  </div>
+
+</form>

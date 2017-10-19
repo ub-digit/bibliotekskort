@@ -7,7 +7,6 @@
     "ember-qunit-notifications": "0.1.0",
     "bootstrap": "^3.3.7"
   },
-
   "devDependencies": {
     "bootstrap-select": "^1.12.2",
     "font-awesome": "^4.7.0"

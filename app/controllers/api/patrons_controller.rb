@@ -57,7 +57,7 @@ class Api::PatronsController < ApplicationController
 
     res = Patron.add(parameter_list)
     if res[:code] == 201
-      @response[:reserve] = {}
+      @response[:patron] = {id: 1234} #ember data requires an id to generate success.
       render_json(201)
       return
     else
