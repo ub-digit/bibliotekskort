@@ -3,6 +3,13 @@
 <p class="small">{{t 'patron.important_info'}}</p>
 
 {{#if errors}}
+<div class="row">
+  <div class="col-xs-12 col-sm-10">
+    <div class="alert alert-danger" role="alert">
+        <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{t 'patron.form_error_header'}} </p>
+    </div>
+  </div>
+</div>
   <ul>
   {{#each errors.errors as |error|}}
       <li>{{error.code}}</li>
@@ -14,9 +21,11 @@
 <form id="patron-registration-form">
     <div class="row">
     <div class="col-xs-12 col-sm-3">
-      <div class="form-group">
+      <div class="form-group {{has-error errors.errors 'personalnumber'}}">
         <label for="personalnumber">{{t 'patron.personalnumber'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'personalnumber'}}">{{t (get-error-msg errors.errors 'personalnumber')}}</span>
         {{input name="personalnumber" placeholder="19770125-4975" id="personalnumber" autofocus="true" value=model.patron.personalnumber class="form-control"}}
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
         <span class="help-block">{{t 'patron.personalnumber_help_block'}}</span>
       </div>
     </div>
@@ -24,15 +33,16 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="form-group">
-        <label for="firstname">{{t 'patron.firstname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <label for="firstname">{{t 'patron.firstname'}} </label>
         {{input name="firstname" id="firstname" value=model.patron.firstname class="form-control"}}
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
+      <div class="form-group {{has-error errors.errors 'surname'}}">
         <label for="surname">{{t 'patron.surname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'surname'}}">{{t (get-error-msg errors.errors 'surname')}}</span>
         {{input name="surname" id="surname" value=model.patron.surname class="form-control"}}
       </div>
     </div>
@@ -41,8 +51,9 @@
   <h2>{{t 'patron.address1_header'}}</h2>
   <div class="row">
     <div class="col-xs-12 col-sm-5">
-      <div class="form-group">
-        <label for="address">{{t 'patron.address'}}</label>
+      <div class="form-group {{has-error errors.errors 'address'}}">
+        <label for="address">{{t 'patron.address'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'address'}}">{{t (get-error-msg errors.errors 'address')}}</span>
         {{input name="address" id="address" value=model.patron.address class="form-control"}}
       </div>
     </div>
@@ -57,8 +68,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-3">
-      <div class="form-group">
-        <label for="city">{{t 'patron.city'}}</label>
+      <div class="form-group {{has-error errors.errors 'city'}}">
+        <label for="city">{{t 'patron.city'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'city'}}">{{t (get-error-msg errors.errors 'city')}}</span>
         {{input name="city" id="city" placeholder="Göteborg" value=model.patron.city class="form-control"}}
       </div>
     </div>
@@ -130,13 +142,16 @@
   <hr>
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-      <div class="checkbox">
-        <label for="accept_terms">
-          {{input type="checkbox" name="accept_terms" checked=terms_accepted}}
-           {{t 'patron.accept_terms'}} <span class="text-danger">{{t 'patron.is_required'}}</span>
-        </label>
-        <span class="help-block">{{t 'patron.accept_terms_help_block'}}</span>
-        <span class="help-block">{{t 'patron.pul_link'}}</span>
+      <div class="{{has-error errors.errors 'accept_text'}}">
+        <div class="checkbox">
+          <label for="accept_text">
+            {{input type="checkbox" name="accept_text" checked=terms_accepted}}
+            {{t 'patron.accept_text'}} <span class="text-danger">{{t 'patron.is_required'}}</span>
+          </label>
+          <span class="text-danger error-msg {{has-error errors.errors 'accept_text'}}">{{t (get-error-msg errors.errors 'accept_text')}}</span>
+          <span class="help-block">{{t 'patron.accept_text_help_block'}}</span>
+          <span class="help-block">{{t 'patron.pul_link'}}</span>
+        </div>
       </div>
     </div>
   </div>
