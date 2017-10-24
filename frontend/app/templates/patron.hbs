@@ -108,6 +108,21 @@
       <div class="form-group">
         <label for="smsalertnumber">{{t 'patron.smsalertnumber'}}</label>
         {{input name="smsalertnumber" id="smsalertnumber" value=model.patron.smsalertnumber class="form-control"}}
+        <label for="message_pref">{{t 'patron.message_pref'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{#x-select class="form-control" value="1" action=(action "selectMessagePref") as |xs|}}
+            {{#each model.messagePref as |pref|}}
+              {{#xs.option value=pref.id}}{{pref.label_sv}}{{/xs.option}}
+            {{/each}}
+        {{/x-select}}
+        <span class="help-block">{{t 'patron.message_pref_help_block'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="mobile">{{t 'patron.mobile'}}</label>
+        {{input name="mobile" id="mobile" value=model.patron.mobile class="form-control"}}
       </div>
     </div>
   </div>
@@ -124,20 +139,6 @@
       <div class="form-group">
         <label for="email">{{t 'patron.email'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
         {{input name="email" id="email" value=model.patron.email class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
-        <label for="message_pref">{{t 'patron.message_pref'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        {{#x-select class="form-control" value="1" action=(action "selectMessagePref") as |xs|}}
-            {{#each model.messagePref as |pref|}}
-              {{#xs.option value=pref.id}}{{pref.label_sv}}{{/xs.option}}
-            {{/each}}
-        {{/x-select}}
-        <span class="help-block">{{t 'patron.message_pref_help_block'}}</span>
       </div>
     </div>
   </div>
