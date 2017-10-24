@@ -19,6 +19,8 @@ export default {
     "important_info":   'Beställt material läggs på öppen avhämtningshylla med ditt namn angivet. Kontakta biblioteket om du hellre vill att materialet förvaras bakom disk.',
     "is_required": '(obligatoriskt)',
 
+
+    "form_error_header": 'Formuläret innehåller felaktigheter. Var vänlig rätta till dessa och försök igen.',
     "personalnumber": 'Personnummer',
     "personalnumber_help_block": 'Ange 12 siffror',
     "firstname": 'Förnamn',
@@ -36,10 +38,19 @@ export default {
     'email': 'Epostadress',
     'message_pref': 'Önskat meddelandeformat',
     'message_pref_help_block': "Välj metod för hur du vill att biblioteket skall kontakta dig.",
-    'accept_terms': 'Godkänn',
-    'accept_terms_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
+    'accept_text': 'Godkänn',
+    'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka',
+
+  },
+
+  "error_codes": {
+    "MISSING_PERSONALNUMBER": 'Personnummer är obligatoriskt',
+    "MISSING_SURNAME": 'Efternamn är obligatoriskt',
+    "MISSING_ADDRESS": 'Adress är obligatoriskt',
+    "MISSING_CITY": 'Stad är obligatoriskt',
+    "MISSING_ACCEPT_TEXT": "Du måste acceptera reglerna",
 
   },
   "confirm": {
