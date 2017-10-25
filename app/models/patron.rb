@@ -1,7 +1,7 @@
 class Patron
   def self.add(parameter_list)
     config = get_config
-    url = "#{config[:base_url]}/members/create"
+    url = "#{config[:base_url]}/members/create_tmp"
     response = RestClient.post(url, parameter_list.merge({userid: config[:user], password: config[:password]}))
     if response && (response.code == 200 || response.code == 201)
       return {code: 201, msg: "Success"}
@@ -25,6 +25,26 @@ class Patron
     end
   #rescue => error
   #  return false
+  end
+
+  def self.validate_personalnumber personalnumber
+    return true if personalnumber.blank?
+    return !!personalnumber.match(/^\d{12}$/)
+  end
+
+  def self.validate_phonenumber phonenumber
+    return true if phonenumber.blank?
+    return !!phonenumber.match(/^0\d+$/)
+  end
+
+  def self.validate_email email
+    return true if email.blank?
+    return !!email.match(/^.+@.+\..+$/)
+  end
+
+  def self.validate_lang lang
+    return true if lang.blank?
+    return lang.eql?("en") || lang.eql?("sv-SE")
   end
 
   def self.get_config
