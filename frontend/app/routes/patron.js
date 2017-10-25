@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return Ember.RSVP.hash({ 
+    return Ember.RSVP.hash({
       patron: this.store.createRecord('patron', {
         personalnumber: '',
         categorycode: 'FC',
@@ -18,7 +18,7 @@ export default Ember.Route.extend({
         B_city: '',
         B_zipcode: '',
         phone: '',
-        mobile: '',
+        smsalertnumber: '',
         email: '',
         accept_text: '',
       }),
