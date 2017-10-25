@@ -27,6 +27,26 @@ class Patron
   #  return false
   end
 
+  def self.validate_personalnumber personalnumber
+    return true if personalnumber.blank?
+    return !!personalnumber.match(/^\d{12}$/)
+  end
+
+  def self.validate_phonenumber phonenumber
+    return true if phonenumber.blank?
+    return !!phonenumber.match(/^0\d+$/)
+  end
+
+  def self.validate_email email
+    return true if email.blank?
+    return !!email.match(/^.+@.+\..+$/)
+  end
+
+  def self.validate_lang lang
+    return true if lang.blank?
+    return lang.eql?("en") || lang.eql?("sv-SE")
+  end
+
   def self.get_config
     {
       base_url: APP_CONFIG['koha']['base_url'],
