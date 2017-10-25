@@ -1,7 +1,7 @@
 class Patron
   def self.add(parameter_list)
     config = get_config
-    url = "#{config[:base_url]}/members/create_tmp"
+    url = "#{config[:base_url]}/members/create"
     response = RestClient.post(url, parameter_list.merge({userid: config[:user], password: config[:password]}))
     if response && (response.code == 200 || response.code == 201)
       return {code: 201, msg: "Success"}
