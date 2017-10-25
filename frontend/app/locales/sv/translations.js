@@ -33,7 +33,7 @@ export default {
     "B_address": 'Adress',
     "B_zipcode": 'Postnummer',
     "B_city": 'Stad',
-    "mobile": 'Mobilnummer för sms',
+    "smsalertnumber": 'Mobilnummer för sms',
     'phone': 'Annat telefonnummer',
     'email': 'Epostadress',
     'message_pref': 'Önskat meddelandeformat',

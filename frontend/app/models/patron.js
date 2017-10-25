@@ -13,7 +13,7 @@ export default DS.Model.extend({
   B_city: DS.attr('string'),
   B_zipcode: DS.attr('string'),
   phone: DS.attr('string'),
-  mobile: DS.attr('string'),
+  smsalertnumber: DS.attr('string'),
   email: DS.attr('string'),
   accept_text: DS.attr('string')
 });
