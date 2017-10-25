@@ -47,12 +47,23 @@ export default {
 
   "error_codes": {
     "MISSING_PERSONALNUMBER": 'Personnummer är obligatoriskt',
+    "MISSING_CATEGORYCODE": 'Låntagarkategori är obligatoriskt',
+    "MISSING_FIRSTNAME": 'Förnamn är obligatoriskt',
     "MISSING_SURNAME": 'Efternamn är obligatoriskt',
     "MISSING_ADDRESS": 'Adress är obligatoriskt',
+    "MISSING_ZIPCODE": 'Postnummer är obligatiriskt',
     "MISSING_CITY": 'Stad är obligatoriskt',
+    "MISSING_LANG": 'Språk är obligatoriskt',
     "MISSING_ACCEPT_TEXT": "Du måste acceptera reglerna",
 
+    "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
+    "PHONE_FORMAT_ERROR": 'Felaktigt telefonnummer',
+    "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer för sms-utskick',
+    "EMAIL_FORMAT_ERROR": 'Felaktig e-postadress',
+
+    "PERSONALNUMBER_EXISTS": 'Detta personnummer är redan registrerat',
   },
+
   "confirm": {
     "header": 'Tack för din registrering',
     "extra_info": 'Kontakta ditt bibliotek för att färdigställa din registrering.',

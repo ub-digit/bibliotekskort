@@ -32,8 +32,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
-        <label for="firstname">{{t 'patron.firstname'}} </label>
+      <div class="form-group {{has-error errors.errors 'firstname'}}">
+        <label for="firstname">{{t 'patron.firstname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'firstname'}}">{{t (get-error-msg errors.errors 'firstname')}}</span>
         {{input name="firstname" id="firstname" value=model.patron.firstname class="form-control"}}
       </div>
     </div>
@@ -59,9 +60,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-2">
-      <div class="form-group">
-        <label for="zipcode">{{t 'patron.zipcode'}}</label>
+    <div class="col-xs-12 col-sm-3">
+      <div class="form-group  {{has-error errors.errors 'zipcode'}}">
+        <label for="zipcode">{{t 'patron.zipcode'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'zipcode'}}">{{t (get-error-msg errors.errors 'zipcode')}}</span>
         {{input name="zipcode" id="zipcode" placeholder="41436" value=model.patron.zipcode class="form-control"}}
       </div>
     </div>
