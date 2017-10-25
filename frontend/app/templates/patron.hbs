@@ -33,7 +33,11 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="form-group {{has-error errors.errors 'firstname'}}">
+<<<<<<< HEAD
         <label for="firstname">{{t 'patron.firstname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+=======
+        <label for="firstname">{{t 'patron.firstname'}} </label>
+>>>>>>> added error check for zipcode
         <span class="text-danger error-msg {{has-error errors.errors 'firstname'}}">{{t (get-error-msg errors.errors 'firstname')}}</span>
         {{input name="firstname" id="firstname" value=model.patron.firstname class="form-control"}}
       </div>
@@ -60,9 +64,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="form-group  {{has-error errors.errors 'zipcode'}}">
-        <label for="zipcode">{{t 'patron.zipcode'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+
+    <div class="col-xs-12 col-sm-2">
+      <div class="form-group {{has-error errors.errors 'zipcode'}}">
+        <label for="zipcode">{{t 'patron.zipcode'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'zipcode'}}">{{t (get-error-msg errors.errors 'zipcode')}}</span>
         {{input name="zipcode" id="zipcode" placeholder="41436" value=model.patron.zipcode class="form-control"}}
       </div>
@@ -109,7 +114,7 @@
         <label for="smsalertnumber">{{t 'patron.smsalertnumber'}}</label>
         {{input name="smsalertnumber" id="smsalertnumber" value=model.patron.smsalertnumber class="form-control"}}
         <label for="message_pref">{{t 'patron.message_pref'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        {{#x-select class="form-control" value="1" action=(action "selectMessagePref") as |xs|}}
+        {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
             {{#each model.messagePref as |pref|}}
               {{#xs.option value=pref.id}}{{pref.label_sv}}{{/xs.option}}
             {{/each}}
@@ -163,5 +168,8 @@
       <button type="submit" {{action 'submit'}} class="btn btn-primary">{{t 'patron.submit'}}</button>
     </div>
   </div>
-
 </form>
+
+
+{{mobile_required}}
+{{email_required}}
