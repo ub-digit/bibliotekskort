@@ -29,7 +29,7 @@ class Patron
 
   def self.validate_personalnumber personalnumber
     return true if personalnumber.blank?
-    return !!personalnumber.match(/^\d{12}$/)
+    return !!personalnumber.match(/^\w{12}$/)
   end
 
   def self.validate_phonenumber phonenumber
