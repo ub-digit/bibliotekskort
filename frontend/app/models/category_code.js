@@ -7,6 +7,7 @@ export default DS.Model.extend({
   label_en: DS.attr('string'),
   label: Ember.computed('i18n.locale', function() {
     let lang = this.get('i18n.locale');
+
     return this.get('label_' + lang);
   })
 

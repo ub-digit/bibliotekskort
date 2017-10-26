@@ -8,13 +8,27 @@ export default Ember.Controller.extend({
       return;
     }
     // this will never happen
-    this.get("model.patron").set('accept_text',"Biblioteksreglerna accepteras ej");
+    this.get("model.patron").set('accept_text', "Biblioteksreglerna accepteras ej");
   }),
 
+  mobile_required: Ember.computed('model.patron.message_pref', function() {
+    let pr = this.get('model.patron.message_pref');
+    if (pr == 2 || pr == 3) return true;
+    return false;
+  }),
 
+  email_required: Ember.computed('model.patron.message_pref', function() {
+    let pr = this.get('model.patron.message_pref');
+    if (pr == 1 || pr == 2) return true;
+    return false;
+  }),
   actions: {
     selectMessagePref(value, event) {
       this.get("model.patron").set('message_pref', value);
+    },
+
+    selectCategoryCode(value, event) {
+      this.get("model.patron").set('categorycode', value);
     }
   }
 });
