@@ -25,6 +25,10 @@ export default Ember.Controller.extend({
   actions: {
     selectMessagePref(value, event) {
       this.get("model.patron").set('message_pref', value);
+    },
+
+    selectCategoryCode(value, event) {
+      this.get("model.patron").set('categorycode', value);
     }
   }
 });

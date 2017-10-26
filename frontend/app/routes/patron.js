@@ -23,6 +23,8 @@ export default Ember.Route.extend({
         accept_text: '',
       }),
       messagePref: this.get('store').findAll('message-pref'),
+      categoryCodes: this.get('store').findAll('category-code')
+
     });
   },
   setupController(controller, model) {

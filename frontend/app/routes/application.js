@@ -5,7 +5,6 @@ export default Ember.Route.extend({
 
   beforeModel(transition) {
     var lang = transition.queryParams.lang;
-
     if (lang) {
       this.set('i18n.locale', lang);
     }

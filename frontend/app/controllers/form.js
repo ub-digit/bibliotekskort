@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   methods: Ember.computed(function() {
     return [{
-        'method': 'Epost',
+        'method': 'Epost d',
         'value': 1
       },
       {

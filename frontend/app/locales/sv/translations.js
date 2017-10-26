@@ -16,7 +16,7 @@ export default {
   "patron": {
     "header": 'Ansökan om bibliotekskort',
     "sub_header": 'Obs! Endast för dig som inte redan har bibliotekskort vid GUB eller GU-kort.',
-    "important_info":   'Beställt material läggs på öppen avhämtningshylla med ditt namn angivet. Kontakta biblioteket om du hellre vill att materialet förvaras bakom disk.',
+    "important_info": 'Beställt material läggs på öppen avhämtningshylla med ditt namn angivet. Kontakta biblioteket om du hellre vill att materialet förvaras bakom disk.',
     "is_required": '(obligatoriskt)',
 
 
@@ -42,6 +42,7 @@ export default {
     'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka',
+    "category": "Väl kategori"
 
   },
 
