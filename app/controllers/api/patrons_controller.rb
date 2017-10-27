@@ -40,6 +40,8 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "lang", code: "LANG_FORMAT_ERROR", detail: "lang format error."}) if !Patron.validate_lang(lang)
     error_list.push({field: "messaging_format", code: "MESSAGING_FORMAT_FORMAT_ERROR", detail: "messaging format format error."}) if !validate_messaging_format(messaging_format)
 
+    error_list.push({field: "categorycode", code: "INVALID_CATEGORYCODE", detail: "invalid category code."}) if !CategoryCode.validate(categorycode)
+
     if messaging_format.eql?("sms")
       error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
     elsif messaging_format.eql?("email")

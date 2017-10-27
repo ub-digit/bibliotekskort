@@ -59,9 +59,10 @@ export default {
     "MISSING_LANG": 'Språk är obligatoriskt',
     "MISSING_MESSAGING_FORMAT": 'Meddelandeformat är obligatoriskt',
     "MISSING_ACCEPT_TEXT": "Du måste acceptera reglerna",
-
     "MISSING_SMSALERTNUMBER": 'Mobilnummer för sms-utskick är obligatoriskt',
     "MISSING_EMAIL": 'E-postadress är obligatoriskt',
+
+    "INVALID_CATEGORYCODE": 'Ogiltig låntagarkategori',
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
     "PHONE_FORMAT_ERROR": 'Felaktigt telefonnummer',
