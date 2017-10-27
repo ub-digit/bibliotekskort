@@ -11,15 +11,15 @@ export default Ember.Controller.extend({
     this.get("model.patron").set('accept_text', "Biblioteksreglerna accepteras ej");
   }),
 
-  mobile_required: Ember.computed('model.patron.message_pref', function() {
-    let pr = this.get('model.patron.message_pref');
-    if (pr == 2 || pr == 3) return true;
+  mobile_required: Ember.computed('model.patron.messaging_format', function() {
+    let pr = this.get('model.patron.messaging_format');
+    if (pr === 'sms_email' || pr === 'sms') return true;
     return false;
   }),
 
-  email_required: Ember.computed('model.patron.message_pref', function() {
-    let pr = this.get('model.patron.message_pref');
-    if (pr == 1 || pr == 2) return true;
+  email_required: Ember.computed('model.patron.messaging_format', function() {
+    let pr = this.get('model.patron.messaging_format');
+    if (pr === 'email' || pr === 'sms_email') return true;
     return false;
   }),
   actions: {

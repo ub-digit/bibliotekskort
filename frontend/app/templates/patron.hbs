@@ -10,14 +10,7 @@
     </div>
   </div>
 </div>
-  <ul>
-  {{#each errors.errors as |error|}}
-      <li>{{error.code}}</li>
-  {{/each}}
-  </ul>
 {{/if}}
-
-
 <form id="patron-registration-form">
     <div class="row">
     <div class="col-xs-12 col-sm-3">
@@ -60,7 +53,6 @@
     </div>
   </div>
   <div class="row">
-
     <div class="col-xs-12 col-sm-3">
       <div class="form-group {{has-error errors.errors 'zipcode'}}">
         <label for="zipcode">{{t 'patron.zipcode'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
@@ -119,8 +111,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
+      <div class="form-group {{has-error errors.errors 'smsalertnumber'}}">
         <label for="smsalertnumber">{{t 'patron.smsalertnumber'}} {{#if mobile_required}}<span class="text-danger">{{t 'patron.is_required'}}</span>{{/if}}</label>
+        <span class="text-danger error-msg {{has-error errors.errors 'smsalertnumber'}}">{{t (get-error-msg errors.errors 'smsalertnumber')}}</span>
         {{input name="smsalertnumber" id="smsalertnumber" value=model.patron.smsalertnumber class="form-control"}}
       </div>
     </div>
@@ -135,8 +128,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
+      <div class="form-group {{has-error errors.errors 'email'}}">
         <label for="email">{{t 'patron.email'}} {{#if email_required}}<span class="text-danger">{{t 'patron.is_required'}}</span>{{/if}}</label>
+        <span class="text-danger error-msg {{has-error errors.errors 'email'}}">{{t (get-error-msg errors.errors 'email')}}</span>
         {{input name="email" id="email" value=model.patron.email class="form-control"}}
       </div>
     </div>
@@ -151,7 +145,6 @@
               {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
             {{/each}}
         {{/x-select}}
-        <span class="help-block">{{t 'patron.message_pref_help_block'}}</span>
       </div>
     </div>
   </div>
@@ -159,7 +152,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="form-group">
-        <label for="message_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <label for="language_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
         {{#x-select class="form-control" value="0" action=(action "selectLang") as |xs|}}
           {{#xs.option value='sv-SE'}}{{t 'patron.swedish'}}{{/xs.option}}
           {{#xs.option value='en'}}{{t 'patron.english'}}{{/xs.option}}
@@ -168,7 +161,6 @@
     </div>
   </div>
   <hr>
-
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="{{has-error errors.errors 'accept_text'}}">
@@ -190,7 +182,3 @@
     </div>
   </div>
 </form>
-
-
-{{mobile_required}}
-{{email_required}}
