@@ -6,6 +6,8 @@ export function hasError(params /*, hash*/ ) {
   if (errors) {
 
     let field = params[1];
+
+
     if (errors.findBy('field', field)) {
       return 'has-error';
     }

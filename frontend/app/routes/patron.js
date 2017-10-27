@@ -21,8 +21,8 @@ export default Ember.Route.extend({
         smsalertnumber: '',
         email: '',
         accept_text: '',
-        lang: '',
-        messaging_format: ''
+        lang: 'sv-SE', // defaults to sv-SE
+        messaging_format: 'email' // defaults to email
       }),
       messagePref: this.get('store').findAll('message-pref'),
       categoryCodes: this.get('store').findAll('category-code')
