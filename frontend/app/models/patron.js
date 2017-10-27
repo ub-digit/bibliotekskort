@@ -15,5 +15,7 @@ export default DS.Model.extend({
   phone: DS.attr('string'),
   smsalertnumber: DS.attr('string'),
   email: DS.attr('string'),
-  accept_text: DS.attr('string')
+  accept_text: DS.attr('string'),
+  lang: DS.attr('string'),
+  messaging_format: DS.attr('string')
 });

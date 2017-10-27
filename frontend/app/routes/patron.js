@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       patron: this.store.createRecord('patron', {
         personalnumber: '',
-        categorycode: 'FC',
+        categorycode: '',
         branchcode: '',
         surname: '',
         firstname: '',
@@ -21,6 +21,8 @@ export default Ember.Route.extend({
         smsalertnumber: '',
         email: '',
         accept_text: '',
+        lang: '',
+        messaging_format: ''
       }),
       messagePref: this.get('store').findAll('message-pref'),
       categoryCodes: this.get('store').findAll('category-code')

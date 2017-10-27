@@ -18,6 +18,7 @@ class Api::PatronsController < ApplicationController
     smsalertnumber = params[:patron][:smsalertnumber]
     email = params[:patron][:email]
     lang = params[:patron][:lang]
+    messaging_format = params[:patron][:messaging_format]
     accept_text = params[:patron][:accept_text]
 
     error_list = Array.new
@@ -29,6 +30,7 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "zipcode", code: "MISSING_ZIPCODE", detail: "zipcode is missing."}) if zipcode.blank?
     error_list.push({field: "city", code: "MISSING_CITY", detail: "city is missing."}) if city.blank?
     error_list.push({field: "lang", code: "MISSING_LANG", detail: "lang is missing."}) if lang.blank?
+    error_list.push({field: "messaging_format", code: "MISSING_MESSAGING_FORMAT", detail: "messaging_format is missing."}) if messaging_format.blank?
     error_list.push({field: "accept_text", code: "MISSING_ACCEPT_TEXT", detail: "accept_text is missing."}) if accept_text.blank?
 
     error_list.push({field: "personalnumber", code: "PERSONALNUMBER_FORMAT_ERROR", detail: "personalnumber format error."}) if !Patron.validate_personalnumber(personalnumber)
@@ -36,8 +38,21 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "smsalertnumber", code: "SMSALERTNUMBER_FORMAT_ERROR", detail: "smsalertnumber format error."}) if !Patron.validate_phonenumber(smsalertnumber)
     error_list.push({field: "email", code: "EMAIL_FORMAT_ERROR", detail: "email format error."}) if !Patron.validate_email(email)
     error_list.push({field: "lang", code: "LANG_FORMAT_ERROR", detail: "lang format error."}) if !Patron.validate_lang(lang)
+    error_list.push({field: "messaging_format", code: "MESSAGING_FORMAT_FORMAT_ERROR", detail: "messaging format format error."}) if !validate_messaging_format(messaging_format)
+
+    if messaging_format.eql?("sms")
+      error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
+    elsif messaging_format.eql?("email")
+      error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
+    elsif messaging_format.eql?("sms_email")
+      error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
+      error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
+    else # paper
+      messaging_format = nil
+    end
 
     error_list.push({field: "personalnumber", code: "PERSONALNUMBER_EXISTS", detail: "personalnumber already exists."}) if Patron.exists?(personalnumber)
+
 
     if error_list.present?
       error_msg(ErrorCodes::UNPROCESSABLE_ENTITY, "Invalid parameters.", error_list)
@@ -58,9 +73,11 @@ class Api::PatronsController < ApplicationController
       B_city: b_city,
       B_zipcode: b_zipcode,
       phone: phone,
+      mobile: smsalertnumber,
       smsalertnumber: smsalertnumber,
       email: email,
       lang: lang,
+      messaging_format: messaging_format,
       accept_text: accept_text
     }
 
@@ -76,4 +93,9 @@ class Api::PatronsController < ApplicationController
     end
   end
 
+private
+  def validate_messaging_format messaging_format
+    return true if messaging_format.blank?
+    return ["paper", "sms", "email", "sms_email"].include?(messaging_format)
+  end
 end

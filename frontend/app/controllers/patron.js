@@ -24,11 +24,15 @@ export default Ember.Controller.extend({
   }),
   actions: {
     selectMessagePref(value, event) {
-      this.get("model.patron").set('message_pref', value);
+      this.get("model.patron").set('messaging_format', value);
     },
 
     selectCategoryCode(value, event) {
       this.get("model.patron").set('categorycode', value);
+    },
+
+    selectLang(value, event) {
+      this.get("model.patron").set('lang', value);
     }
   }
 });
