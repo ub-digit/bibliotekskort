@@ -38,12 +38,14 @@ export default {
     'email': 'Epostadress',
     'message_pref': 'Önskat meddelandeformat',
     'message_pref_help_block': "Välj metod för hur du vill att biblioteket skall kontakta dig.",
+    'lang': 'Välj språk',
     'accept_text': 'Godkänn',
     'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka',
-    "category": "Väl kategori"
-
+    "category": "Väl kategori",
+    "swedish": "Svenska",
+    "english": "Engelska",
   },
 
   "error_codes": {
@@ -55,12 +57,18 @@ export default {
     "MISSING_ZIPCODE": 'Postnummer är obligatiriskt',
     "MISSING_CITY": 'Stad är obligatoriskt',
     "MISSING_LANG": 'Språk är obligatoriskt',
+    "MISSING_MESSAGING_FORMAT": 'Meddelandeformat är obligatoriskt',
     "MISSING_ACCEPT_TEXT": "Du måste acceptera reglerna",
+
+    "MISSING_SMSALERTNUMBER": 'Mobilnummer för sms-utskick är obligatoriskt',
+    "MISSING_EMAIL": 'E-postadress är obligatoriskt',
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
     "PHONE_FORMAT_ERROR": 'Felaktigt telefonnummer',
     "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer för sms-utskick',
     "EMAIL_FORMAT_ERROR": 'Felaktig e-postadress',
+    "LANG_FORMAT_ERROR": 'Felaktigt språk',
+    "MESSAGING_FORMAT_FORMAT_ERROR": 'Felaktigt meddelandeformat',
 
     "PERSONALNUMBER_EXISTS": 'Detta personnummer är redan registrerat',
   },
