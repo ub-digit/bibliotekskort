@@ -1,6 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  i18n: Ember.inject.service(),
+
+  default_sv: Ember.computed('i18n.locale', function() {
+    let l = this.get('i18n.locale');
+    if (l == 'sv') {
+      this.get('model.patron').set('lang', 'sv-SE');
+    }
+    return l == 'sv';
+  }),
+  default_en: Ember.computed('i18n.locale', function() {
+    let l = this.get('i18n.locale');
+    if (l == 'en') {
+      this.get('model.patron').set('lang', 'en-GB');
+    }
+    return l == 'en';
+  }),
   terms_accepted: false,
   terms_accepted_changed: Ember.observer('terms_accepted', function() {
     if (this.get("terms_accepted")) {

@@ -1,96 +1,82 @@
 export default {
-    "home": {
-        "headers": {
-            "logoPrintUrl": '/gu_logo_en_high.png',
-            "level1": 'Gothenburg University Library',
-            "level2": 'Order',
-            "mainHeader": 'Order articles and interlibrary loans',
-        },
-        "footer": {
-            "content": '© <a title="Göteborgs universitet" href="http://www.gu.se/">University of Gothenburg, Sweden</a><br>Box 100, S-405 30 Gothenburg<br>Phone +46 31-786 0000, <a title="Contact" href="http://www.gu.se/omuniversitetet/kontakt/">Contact</a>'
-        },
+  "home": {
+    "headers": {
+      "logoPrintUrl": '/gu_logo_sv_high.png',
+      "level1": 'Göteborgs universitetsbibliotek',
+      "level2": 'Bibliotekskort',
     },
-    "components": {
-        "toggle-lang": {
-            "language": {
-                "sv": "Svenska",
-                "en": "English",
-            }
-        },
-        "progress-steps": {
-            "step-items-label": "Exemplar",
-            "step-details-label": "Din beställning",
-            "step-summary-label": "Sammanfattning",
-            "step-confirmation-label": "Bekräftelse"
-        }
-    },
-    "request": {
-        "order": {
-            "header": "Min beställning",
-            "items": {
-                "btnNext": "Nästa"
-            },
-            "details": {
-                "header": "Din beställning",
-                "labelForLoantypeDropdown": "Välj typ av lån",
-                "labelForLocationDropdown": "Välj upphämntningsställe",
-                "btnNext": "Nästa"
-            },
-            "confirmation": {},
-            "summary": {}
-        }
-    },
-    "status-errors": {
-        "404": "The page you were looking for does not exist.",
-    },
-    "login": {
-        "casLogin": "Log in"
-    },
-    "request-errors": {
-        "header": "Unable to order",
-        "NO_ID": {
-            "header": "Det saknas ett ID",
-            "message": "Detta felet uppkommer eftersom applikationen laddas utan sitt dynamiska segment som krävs för rutten request. Felet fångas på application-nivå i before-model.",
-        },
-        "BANNED": {
-            "header": "Avstängd!",
-            "message": "Du är avstäng från Universitetsbiblioteket. Kontakta.... "
-        },
-        "CARD_LOST": {
-            "header": "Ditt lånekort är anmält förlorat!",
-            "message": "Då ditt lånekort är anmält som förlorat måste du ansöka om ett nytt. Kontakta.... "
-        },
-        "FINES": {
-            "header": "Du har obetalda avgifter!",
-            "message": "Dina sammanlagda avgifter överstiger högsta tillåtna belopp och måste korrigeras innan nya lån kan göras."
-        },
-        "DEBARRED": {
-            "header": "Ditt konto är spärrat!",
-            "message": "Du tillåts inte låna något förrän det är upplåst."
-        },
-        "NO_ADDRESS": {
-            "header": "Adress saknas!",
-            "message": "Det finns ingen angiven låntagaradress och det måste korrigeras innan nya lån kan göras."
-        },
-        "EXPIRED": {
-            "header": "Utgånget lånekort",
-            "message": "Ditt lånekort har gått ut och måste förnyas innan nya lån kan göras."
-        },
-        "CAN_NOT_BE_BORROWED": {
-            "header": "Får ej lånas",
-            "message": "Får ej lånas."
-        },
-        "ITEM_NOT_FOUND": {
-            "header": "Hittas ej",
-            "message": "Den efterfrågade posten hittades ej."
-        },
-        "ALREADY_BORROWED": {
-            "header": "Redan lånad",
-            "message": "Du har lånat ett exemplar av detta material."
-        },
-        "ALREADY_RESERVED": {
-            "header": "Har redan köat eller beställt",
-            "message": "Du har redan beställt detta material eller står i kö på det."
-        },
-    }
+  },
+  "components": {
+
+  },
+
+  "application": {
+
+  },
+  "patron": {
+    "header": 'Ansökan om bibliotekskort',
+    "sub_header": 'Obs! Endast för dig som inte redan har bibliotekskort vid GUB eller GU-kort.',
+    "important_info": 'Beställt material läggs på öppen avhämtningshylla med ditt namn angivet. Kontakta biblioteket om du hellre vill att materialet förvaras bakom disk.',
+    "is_required": '(obligatoriskt)',
+
+
+    "form_error_header": 'Formuläret innehåller felaktigheter. Var vänlig rätta till dessa och försök igen.',
+    "personalnumber": 'Personnummer',
+    "personalnumber_help_block": 'Ange 12 siffror',
+    "firstname": 'Förnamn',
+    "surname": 'Efternamn',
+    "address1_header": "Adress",
+    "address": 'Adress',
+    "zipcode": 'Postnummer',
+    "city": 'Stad',
+    "address2_header": "Annan adress",
+    "B_address": 'Adress',
+    "B_zipcode": 'Postnummer',
+    "B_city": 'Stad',
+    "smsalertnumber": 'Mobilnummer för sms',
+    'phone': 'Annat telefonnummer',
+    'email': 'Epostadress',
+    'message_pref': 'Önskat meddelandeformat',
+    'message_pref_help_block': "Välj metod för hur du vill att biblioteket skall kontakta dig.",
+    'lang': 'Välj språk',
+    'accept_text': 'Godkänn',
+    'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
+    'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
+    "submit": 'Skicka',
+    "category": "Väl kategori",
+    "swedish": "Svenska",
+    "english": "Engelska",
+  },
+
+  "error_codes": {
+    "MISSING_PERSONALNUMBER": 'Personnummer är obligatoriskt',
+    "MISSING_CATEGORYCODE": 'Låntagarkategori är obligatoriskt',
+    "MISSING_FIRSTNAME": 'Förnamn är obligatoriskt',
+    "MISSING_SURNAME": 'Efternamn är obligatoriskt',
+    "MISSING_ADDRESS": 'Adress är obligatoriskt',
+    "MISSING_ZIPCODE": 'Postnummer är obligatiriskt',
+    "MISSING_CITY": 'Stad är obligatoriskt',
+    "MISSING_LANG": 'Språk är obligatoriskt',
+    "MISSING_MESSAGING_FORMAT": 'Meddelandeformat är obligatoriskt',
+    "MISSING_ACCEPT_TEXT": "Du måste acceptera reglerna",
+    "MISSING_SMSALERTNUMBER": 'Mobilnummer för sms-utskick är obligatoriskt',
+    "MISSING_EMAIL": 'E-postadress är obligatoriskt',
+
+    "INVALID_CATEGORYCODE": 'Ogiltig låntagarkategori',
+
+    "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
+    "PHONE_FORMAT_ERROR": 'Felaktigt telefonnummer',
+    "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer för sms-utskick',
+    "EMAIL_FORMAT_ERROR": 'Felaktig e-postadress',
+    "LANG_FORMAT_ERROR": 'Felaktigt språk',
+    "MESSAGING_FORMAT_FORMAT_ERROR": 'Felaktigt meddelandeformat',
+
+    "PERSONALNUMBER_EXISTS": 'Detta personnummer är redan registrerat',
+  },
+
+  "confirm": {
+    "header": 'Tack för din registrering',
+    "extra_info": 'Kontakta ditt bibliotek för att färdigställa din registrering.',
+  }
+
 };
