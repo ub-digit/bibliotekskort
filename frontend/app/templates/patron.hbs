@@ -111,6 +111,17 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+        <label for="language_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        {{#x-select class="form-control" value="0" action=(action "selectLang") as |xs|}}
+          {{#xs.option value='sv-SE' selected=default_sv}}{{t 'patron.swedish'}}{{/xs.option}}
+          {{#xs.option value='en' selected=default_en}}{{t 'patron.english'}}{{/xs.option}}
+        {{/x-select}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
       <div class="form-group {{has-error errors.errors 'smsalertnumber'}}">
         <label for="smsalertnumber">{{t 'patron.smsalertnumber'}} {{#if mobile_required}}<span class="text-danger">{{t 'patron.is_required'}}</span>{{/if}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'smsalertnumber'}}">{{t (get-error-msg errors.errors 'smsalertnumber')}}</span>
@@ -150,18 +161,6 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
-        <label for="language_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        {{#x-select class="form-control" value="0" action=(action "selectLang") as |xs|}}
-          {{#xs.option value='sv-SE'}}{{t 'patron.swedish'}}{{/xs.option}}
-          {{#xs.option value='en'}}{{t 'patron.english'}}{{/xs.option}}
-        {{/x-select}}
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
     <div class="col-xs-12 col-sm-6">
       <div class="{{has-error errors.errors 'accept_text'}}">
         <div class="checkbox">
@@ -182,3 +181,5 @@
     </div>
   </div>
 </form>
+
+
