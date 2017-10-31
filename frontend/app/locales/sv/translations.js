@@ -11,6 +11,7 @@ export default {
   },
 
   "application": {
+    "title": "Bibliotekskort"
 
   },
   "patron": {

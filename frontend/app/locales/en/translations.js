@@ -11,7 +11,7 @@ export default {
   },
 
   "application": {
-
+    "title": "Library card"
   },
   "patron": {
     "header": 'Ansökan om bibliotekskort',

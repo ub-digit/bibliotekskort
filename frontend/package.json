@@ -41,6 +41,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-i18n": "4.5.0",
     "ember-load-initializers": "^0.5.1",
+    "ember-page-title": "3.2.2",
     "ember-resolver": "^2.0.3",
     "ember-welcome-page": "^1.0.1",
     "emberx-select": "3.1.0",
