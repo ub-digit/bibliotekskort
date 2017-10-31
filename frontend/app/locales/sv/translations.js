@@ -23,7 +23,7 @@ export default {
 
     "form_error_header": 'Formuläret innehåller felaktigheter. Var vänlig rätta till dessa och försök igen.',
     "personalnumber": 'Personnummer',
-    "personalnumber_help_block": 'Ange 12 siffror',
+    "personalnumber_help_block": 'Ange 12 siffror utan bindestreck',
     "firstname": 'Förnamn',
     "surname": 'Efternamn',
     "address1_header": "Adress",
@@ -36,6 +36,7 @@ export default {
     "B_city": 'Stad',
     "smsalertnumber": 'Mobilnummer för sms',
     'phone': 'Annat telefonnummer',
+    "phone_help_block": 'Ange endast siffror',
     'email': 'Epostadress',
     'message_pref': 'Önskat meddelandeformat',
     'message_pref_help_block': "Välj metod för hur du vill att biblioteket skall kontakta dig.",

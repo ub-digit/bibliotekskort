@@ -38,6 +38,11 @@ export default Ember.Controller.extend({
     if (pr === 'email' || pr === 'sms_email') return true;
     return false;
   }),
+
+  scrollTop: function() {
+    window.scrollTo(0, 0);
+  }.observes('errors'),
+
   actions: {
     selectMessagePref(value, event) {
       this.get("model.patron").set('messaging_format', value);
