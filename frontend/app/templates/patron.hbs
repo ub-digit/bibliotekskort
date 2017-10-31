@@ -115,7 +115,7 @@
         <label for="language_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
         {{#x-select class="form-control" value="0" action=(action "selectLang") as |xs|}}
           {{#xs.option value='sv-SE' selected=default_sv}}{{t 'patron.swedish'}}{{/xs.option}}
-          {{#xs.option value='en-GB' selected=default_en}}{{t 'patron.english'}}{{/xs.option}}
+          {{#xs.option value='en' selected=default_en}}{{t 'patron.english'}}{{/xs.option}}
         {{/x-select}}
       </div>
     </div>
