@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
   default_en: Ember.computed('i18n.locale', function() {
     let l = this.get('i18n.locale');
     if (l == 'en') {
-      this.get('model.patron').set('lang', 'en-GB');
+      this.get('model.patron').set('lang', 'en');
     }
     return l == 'en';
   }),
