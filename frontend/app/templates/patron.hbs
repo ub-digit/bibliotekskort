@@ -113,13 +113,16 @@
     <div class="col-xs-12 col-sm-4">
       <div class="form-group">
         <label for="language_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        {{#x-select class="form-control" value="0" action=(action "selectLang") as |xs|}}
-          {{#xs.option value='sv-SE' selected=default_sv}}{{t 'patron.swedish'}}{{/xs.option}}
-          {{#xs.option value='en' selected=default_en}}{{t 'patron.english'}}{{/xs.option}}
+        {{#x-select class="form-control" value=i18n.locale action=(action "selectLang") as |xs|}}
+          {{#each communication_lang as |lang|}}
+          {{#xs.option value=lang }}{{t (concat 'patron.' lang)}}{{/xs.option}}
+          {{/each}}
         {{/x-select}}
       </div>
     </div>
   </div>
+
+
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <div class="form-group {{has-error errors.errors 'smsalertnumber'}}">

@@ -31,6 +31,9 @@ export default Ember.Route.extend({
   },
   setupController(controller, model) {
     controller.set('model', model);
+    controller.set('terms_accepted', false);
+    controller.send('selectLang', controller.get("i18n.locale"));
+    controller.get("errors", null);
   },
   actions: {
     submit() {
