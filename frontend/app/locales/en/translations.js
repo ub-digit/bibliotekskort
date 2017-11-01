@@ -66,7 +66,6 @@ export default {
     "INVALID_CATEGORYCODE": 'Ogiltig låntagarkategori',
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
-    "PHONE_FORMAT_ERROR": 'Felaktigt telefonnummer',
     "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer för sms-utskick',
     "EMAIL_FORMAT_ERROR": 'Felaktig e-postadress',
     "LANG_FORMAT_ERROR": 'Felaktigt språk',
