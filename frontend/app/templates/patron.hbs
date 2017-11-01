@@ -151,8 +151,9 @@
   <hr>
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
+      <div class="form-group {{has-error errors.errors 'categorycode'}}">
         <label for="message_pref">{{t 'patron.category'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <span class="text-danger error-msg {{has-error errors.errors 'email'}}">{{t (get-error-msg errors.errors 'categorycode')}}</span>
         {{#x-select class="form-control" value="0" action=(action "selectCategoryCode") as |xs|}}
             {{#each model.categoryCodes as |pref|}}
               {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
