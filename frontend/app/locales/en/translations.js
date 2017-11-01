@@ -45,8 +45,8 @@ export default {
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka',
     "category": "Väl kategori",
-    "swedish": "Svenska",
-    "english": "Engelska",
+    "sv": "Svenska",
+    "en": "Engelska",
   },
 
   "error_codes": {
