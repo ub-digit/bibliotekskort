@@ -15,13 +15,13 @@ export default Ember.Controller.extend({
 
   mobile_required: Ember.computed('model.patron.messaging_format', function() {
     let pr = this.get('model.patron.messaging_format');
-    if (pr === 'sms_email' || pr === 'sms') return true;
+    if (pr === 'sms_email' || pr === 'sms') { return true; }
     return false;
   }),
 
   email_required: Ember.computed('model.patron.messaging_format', function() {
     let pr = this.get('model.patron.messaging_format');
-    if (pr === 'email' || pr === 'sms_email') return true;
+    if (pr === 'email' || pr === 'sms_email')  {return true;}
     return false;
   }),
 
