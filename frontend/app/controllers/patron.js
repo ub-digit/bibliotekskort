@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       return;
     }
     // this will never happen
-    this.get("model.patron").set('accept_text', "Biblioteksreglerna accepteras ej");
+    this.get("model.patron").set('accept_text', "");
   }),
 
   mobile_required: Ember.computed('model.patron.messaging_format', function() {
