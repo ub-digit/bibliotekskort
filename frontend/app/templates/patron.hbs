@@ -92,8 +92,6 @@
     <label class="col-md-12" for="message_pref">{{t 'patron.message_pref'}}</label>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="form-group">
-        
-        <!--<span class="help-block">{{t 'patron.message_pref_help_block'}}</span>-->
         {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
             {{#each model.messagePref as |pref|}}
               {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
