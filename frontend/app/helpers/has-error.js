@@ -11,7 +11,7 @@ export function hasError(params /*, hash*/ ) {
     if (errors.findBy('field', field)) {
       return 'has-error';
     }
-    return 'has-success';
+    return '';
   }
   return '';
 }
