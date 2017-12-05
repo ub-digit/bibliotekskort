@@ -77,7 +77,7 @@ export default {
 
   "confirm": {
     "header": 'Tack för din registrering',
-    "extra_info": 'Du hämtar ut dit bibliotekskort på något av <a href="#">våra bibliotek.</a> Ta med dig giltig<br>legitimation. Om du är distansstudent vid Göteborgs universitet kan du kontakta<br>biblioteket för att få dit kort hemskickat.',
+    "extra_info": 'Du hämtar ut dit bibliotekskort på något av <a href="#">våra bibliotek.</a> Ta med dig giltig legitimation. Om du är distansstudent vid Göteborgs universitet kan du kontakta biblioteket för att få dit kort hemskickat.',
     "extra_info_2": 'När du beställer material lägger biblioteket det på en öppen avhämtningshylla med ditt namn synligt. Kontakta biblioteket om du istället vill hämta dina beställningar i informationsdisken',
     "contact_library_link": '<a href="#">Kontakta biblioteket</a>'
   }
