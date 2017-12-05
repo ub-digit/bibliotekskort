@@ -1,7 +1,7 @@
+<div class="row">
 <h1>{{t 'patron.header'}}</h1>
-<p>{{t 'patron.sub_header'}}</p>
-<p class="small">{{t 'patron.important_info'}}</p>
-
+<p class="col-xs-12 col-sm-8">{{t 'patron.sub_header'}}</p>
+</div>
 {{#if errors}}
 <div class="row">
   <div class="col-xs-12 col-sm-10">
@@ -12,148 +12,42 @@
 </div>
 {{/if}}
 <form id="patron-registration-form">
+    
     <div class="row">
-    <div class="col-xs-12 col-sm-3">
+    <label class="col-md-12" for="personalnumber">{{t 'patron.personalnumber'}} </label>
+    <span class="help-block col-md-12">{{t 'patron.personalnumber_help_block'}}</span>
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="form-group {{has-error errors.errors 'personalnumber'}}">
-        <label for="personalnumber">{{t 'patron.personalnumber'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        
         <span class="text-danger error-msg {{has-error errors.errors 'personalnumber'}}">{{t (get-error-msg errors.errors 'personalnumber')}}</span>
-        {{input name="personalnumber" placeholder="YYYYMMDDXXXX" id="personalnumber" autofocus="true" value=model.patron.personalnumber class="form-control"}}
+        {{input name="personalnumber" id="personalnumber" autofocus="true" value=model.patron.personalnumber class="form-control"}}
         <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-        <span class="help-block">{{t 'patron.personalnumber_help_block'}}</span>
+        
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="form-group {{has-error errors.errors 'firstname'}}">
-        <label for="firstname">{{t 'patron.firstname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <label for="firstname">{{t 'patron.firstname'}} </label>
         <span class="text-danger error-msg {{has-error errors.errors 'firstname'}}">{{t (get-error-msg errors.errors 'firstname')}}</span>
         {{input name="firstname" id="firstname" value=model.patron.firstname class="form-control"}}
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="form-group {{has-error errors.errors 'surname'}}">
-        <label for="surname">{{t 'patron.surname'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <label for="surname">{{t 'patron.surname'}} </label>
         <span class="text-danger error-msg {{has-error errors.errors 'surname'}}">{{t (get-error-msg errors.errors 'surname')}}</span>
         {{input name="surname" id="surname" value=model.patron.surname class="form-control"}}
       </div>
     </div>
   </div>
-  <hr>
-  <h2>{{t 'patron.address1_header'}}</h2>
   <div class="row">
-    <div class="col-xs-12 col-sm-5">
-      <div class="form-group {{has-error errors.errors 'address'}}">
-        <label for="address">{{t 'patron.address'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        <span class="text-danger error-msg {{has-error errors.errors 'address'}}">{{t (get-error-msg errors.errors 'address')}}</span>
-        {{input name="address" id="address" value=model.patron.address class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="form-group {{has-error errors.errors 'zipcode'}}">
-        <label for="zipcode">{{t 'patron.zipcode'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        <span class="text-danger error-msg {{has-error errors.errors 'zipcode'}}">{{t (get-error-msg errors.errors 'zipcode')}}</span>
-        {{input name="zipcode" id="zipcode" value=model.patron.zipcode class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="form-group {{has-error errors.errors 'city'}}">
-        <label for="city">{{t 'patron.city'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        <span class="text-danger error-msg {{has-error errors.errors 'city'}}">{{t (get-error-msg errors.errors 'city')}}</span>
-        {{input name="city" id="city" value=model.patron.city class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <h2>{{t 'patron.address2_header'}}</h2>
-  <div class="row">
-    <div class="col-xs-12 col-sm-5">
-      <div class="form-group">
-        <label for="B_address">{{t 'patron.B_address'}}</label>
-        {{input name="B_address" id="B_address" value=model.patron.B_address class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="form-group">
-        <label for="B_zipcode">{{t 'patron.B_zipcode'}}</label>
-        {{input name="B_zipcode" id="B_zipcode" value=model.patron.B_zipcode class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="form-group">
-        <label for="B_city">{{t 'patron.B_city'}}</label>
-        {{input name="B_city" id="B_city"  value=model.patron.B_city class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
-        <label for="message_pref">{{t 'patron.message_pref'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
-            {{#each model.messagePref as |pref|}}
-              {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
-            {{/each}}
-        {{/x-select}}
-        <span class="help-block">{{t 'patron.message_pref_help_block'}}</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
-        <label for="language_pref">{{t 'patron.lang'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
-        {{#x-select class="form-control" value=i18n.locale action=(action "selectLang") as |xs|}}
-          {{#each communication_lang as |lang|}}
-          {{#xs.option value=lang }}{{t (concat 'patron.' lang)}}{{/xs.option}}
-          {{/each}}
-        {{/x-select}}
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group {{has-error errors.errors 'smsalertnumber'}}">
-        <label for="smsalertnumber">{{t 'patron.smsalertnumber'}} {{#if mobile_required}}<span class="text-danger">{{t 'patron.is_required'}}</span>{{/if}}</label>
-        <span class="text-danger error-msg {{has-error errors.errors 'smsalertnumber'}}">{{t (get-error-msg errors.errors 'smsalertnumber')}}</span>
-        {{input name="smsalertnumber" id="smsalertnumber" value=model.patron.smsalertnumber class="form-control"}}
-        <span class="help-block">{{t 'patron.phone_help_block'}}</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group">
-        <label for="phone">{{t 'patron.phone'}}</label>
-        {{input name="phone" id="phone" value=model.patron.phone class="form-control"}}
-        <span class="help-block">{{t 'patron.phone_help_block'}}</span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="form-group {{has-error errors.errors 'email'}}">
-        <label for="email">{{t 'patron.email'}} {{#if email_required}}<span class="text-danger">{{t 'patron.is_required'}}</span>{{/if}}</label>
-        <span class="text-danger error-msg {{has-error errors.errors 'email'}}">{{t (get-error-msg errors.errors 'email')}}</span>
-        {{input name="email" id="email" value=model.patron.email class="form-control"}}
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="form-group {{has-error errors.errors 'categorycode'}}">
-        <label for="message_pref">{{t 'patron.category'}} <span class="text-danger">{{t 'patron.is_required'}}</span></label>
+        <label for="message_pref">{{t 'patron.category'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'categorycode'}}">{{t (get-error-msg errors.errors 'categorycode')}}</span>
         {{#x-select class="form-control" value="0" action=(action "selectCategoryCode") as |xs|}}
             {{#each model.categoryCodes as |pref|}}
@@ -164,14 +58,85 @@
     </div>
   </div>
   <hr>
+  <h2>{{t 'patron.address1_header'}}</h2>
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group {{has-error errors.errors 'address'}}">
+        <label for="address">{{t 'patron.address'}}</label>
+        <span class="text-danger error-msg {{has-error errors.errors 'address'}}">{{t (get-error-msg errors.errors 'address')}}</span>
+        {{input name="address" id="address" value=model.patron.address class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group {{has-error errors.errors 'zipcode'}}">
+        <label for="zipcode">{{t 'patron.zipcode'}}</label>
+        <span class="text-danger error-msg {{has-error errors.errors 'zipcode'}}">{{t (get-error-msg errors.errors 'zipcode')}}</span>
+        {{input name="zipcode" id="zipcode" value=model.patron.zipcode class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group {{has-error errors.errors 'city'}}">
+        <label for="city">{{t 'patron.city'}}</label>
+        <span class="text-danger error-msg {{has-error errors.errors 'city'}}">{{t (get-error-msg errors.errors 'city')}}</span>
+        {{input name="city" id="city" value=model.patron.city class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2>{{t 'patron.message_header'}}</h2>
+  <div class="row">
+    <label class="col-md-12" for="message_pref">{{t 'patron.message_pref'}}</label>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group">
+        {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
+            {{#each model.messagePref as |pref|}}
+              {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
+            {{/each}}
+        {{/x-select}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group {{has-error errors.errors 'email'}}">
+        <label for="email">{{t 'patron.email'}} {{#unless email_required}}<span class="optinally-text">({{t 'patron.optionally'}})</span>{{/unless}}</label>
+        <span class="text-danger error-msg {{has-error errors.errors 'email'}}">{{t (get-error-msg errors.errors 'email')}}</span>
+        {{input name="email" id="email" value=model.patron.email class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group {{has-error errors.errors 'smsalertnumber'}}">
+        <label for="smsalertnumber">{{#if mobile_required}} {{t 'patron.smsalertnumber'}} {{else}} {{t 'patron.phonenumber'}} {{/if}}{{#unless mobile_required}}<span class="optinally-text">({{t 'patron.optionally'}})</span>{{/unless}}</label>
+         <span class="help-block">{{t 'patron.phone_help_block'}}</span>
+        <span class="text-danger error-msg {{has-error errors.errors 'smsalertnumber'}}">{{t (get-error-msg errors.errors 'smsalertnumber')}}</span>
+        {{input name="smsalertnumber" id="smsalertnumber" value=model.patron.smsalertnumber class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="form-group">
+        <label for="language_pref">{{t 'patron.lang'}}</label>
+        {{#x-select class="form-control" value=i18n.locale action=(action "selectLang") as |xs|}}
+          {{#each communication_lang as |lang|}}
+          {{#xs.option value=lang }}{{t (concat 'patron.' lang)}}{{/xs.option}}
+          {{/each}}
+        {{/x-select}}
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
       <div class="{{has-error errors.errors 'accept_text'}}">
         <div class="checkbox">
-          <label for="accept_text">
-            {{input type="checkbox" name="accept_text" checked=terms_accepted}}
-            {{t 'patron.accept_text'}} <span class="text-danger">{{t 'patron.is_required'}}</span>
-          </label>
+          {{input type="checkbox" name="accept_text" checked=terms_accepted}}
           <span class="text-danger error-msg {{has-error errors.errors 'accept_text'}}">{{t (get-error-msg errors.errors 'accept_text')}}</span>
           <span class="help-block">{{t 'patron.accept_text_help_block'}}</span>
           <span class="help-block">{{t 'patron.pul_link'}}</span>
@@ -180,8 +145,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <button type="submit" {{action 'submit'}} class="btn btn-primary">{{t 'patron.submit'}}</button>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <button type="submit" {{action 'submit'}} class="btn btn-primary btn-submit">{{t 'patron.submit'}}</button>
     </div>
   </div>
 </form>

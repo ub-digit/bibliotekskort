@@ -27,6 +27,14 @@ td,th{
 	}
 }
 
+.container{
+	&.body-block{
+		a{
+		text-decoration: underline;
+		}
+	}
+	
+}
 #patron-registration-form {
 	.text-danger.error-msg {
 		display: none;
@@ -34,9 +42,19 @@ td,th{
 			display: block;
 		}
 	}
+
+	.has-error{
+		.help-block{
+			color:#737373;
+		}
+	}
 }
 
 
+.optinally-text{
+	color:#737373;
+	font-weight: normal;
+}
 
 .center {
 	text-align: center;
@@ -95,6 +113,10 @@ td,th{
 	margin-bottom: 40px;
 }
 
+.btn-submit{
+	margin-top:30px;
+	margin-bottom:20px;
+}
 
 
 .active {
@@ -245,6 +267,10 @@ select.form-control {
         margin-right: 20px;
         margin-top: 10px;
     }
+}
+
+.checkbox{
+	margin-left: 20px;
 }
 
 .summary-info{

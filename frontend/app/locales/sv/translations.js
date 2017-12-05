@@ -17,37 +17,33 @@ export default {
   "patron": {
     "header": 'Ansökan om bibliotekskort',
     "sub_header": 'Obs! Endast för dig som inte redan har bibliotekskort vid GUB eller GU-kort.',
-    "important_info": 'Beställt material läggs på öppen avhämtningshylla med ditt namn angivet. Kontakta biblioteket om du hellre vill att materialet förvaras bakom disk.',
     "is_required": '(obligatoriskt)',
 
 
     "form_error_header": 'Formuläret innehåller felaktigheter. Var vänlig rätta till dessa och försök igen.',
     "personalnumber": 'Personnummer',
-    "personalnumber_help_block": 'Ange 12 siffror utan bindestreck',
+    "personalnumber_help_block": 'Ange 12 siffror utan bindestreck (ÅÅÅÅMMDDNNNN)',
     "firstname": 'Förnamn',
     "surname": 'Efternamn',
     "address1_header": "Adress",
     "address": 'Adress',
     "zipcode": 'Postnummer',
     "city": 'Stad',
-    "address2_header": "Annan adress",
-    "B_address": 'Adress',
-    "B_zipcode": 'Postnummer',
-    "B_city": 'Stad',
     "smsalertnumber": 'Mobilnummer för sms',
-    'phone': 'Annat telefonnummer',
+    'phonenumber': 'Telefonnummer',
     "phone_help_block": 'Ange endast siffror',
     'email': 'Epostadress',
-    'message_pref': 'Önskat meddelandeformat',
-    'message_pref_help_block': "Välj metod för hur du vill att biblioteket skall kontakta dig.",
+    'message_header': 'Meddelanden från biblioteket',
+    'message_pref': 'Hur vill du få påminnelser och aviseringar?',
     'lang': 'Välj språk',
     'accept_text': 'Godkänn',
     'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka',
-    "category": "Väl kategori",
+    "category": "Användarkategori",
     "sv": "Svenska",
     "en": "Engelska",
+    'optionally': 'valfritt'
   },
 
   "error_codes": {
@@ -77,7 +73,9 @@ export default {
 
   "confirm": {
     "header": 'Tack för din registrering',
-    "extra_info": 'Kontakta ditt bibliotek för att färdigställa din registrering.',
+    "extra_info": 'Du hämtar ut dit bibliotekskort på något av <a href="#">våra bibliotek.</a> Ta med dig giltig legitimation. Om du är distansstudent vid Göteborgs universitet kan du kontakta biblioteket för att få dit kort hemskickat.',
+    "extra_info_2": 'När du beställer material lägger biblioteket det på en öppen avhämtningshylla med ditt namn synligt. Kontakta biblioteket om du istället vill hämta dina beställningar i informationsdisken',
+    "contact_library_link": '<a href="#">Kontakta biblioteket</a>'
   }
 
 };
