@@ -12,17 +12,17 @@
 </div>
 {{/if}}
 <form id="patron-registration-form">
-    
+
     <div class="row">
     <label class="col-md-12" for="personalnumber">{{t 'patron.personalnumber'}} </label>
     <span class="help-block col-md-12">{{t 'patron.personalnumber_help_block'}}</span>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="form-group {{has-error errors.errors 'personalnumber'}}">
-        
+
         <span class="text-danger error-msg {{has-error errors.errors 'personalnumber'}}">{{t (get-error-msg errors.errors 'personalnumber')}}</span>
         {{input name="personalnumber" id="personalnumber" autofocus="true" value=model.patron.personalnumber class="form-control"}}
         <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-        
+
       </div>
     </div>
   </div>
