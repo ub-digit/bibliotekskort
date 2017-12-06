@@ -4,17 +4,13 @@ class Api::PatronsController < ApplicationController
   def create
     personalnumber = params[:patron][:personalnumber]
     categorycode = params[:patron][:categorycode]
-    #branchcode = params[:patron][:branchcode]
     branchcode = "44"
     surname = params[:patron][:surname]
     firstname = params[:patron][:firstname]
     address = params[:patron][:address]
     zipcode = params[:patron][:zipcode]
     city = params[:patron][:city]
-    b_address = params[:patron][:b_address]
-    b_city = params[:patron][:b_city]
-    b_zipcode = params[:patron][:b_zipcode]
-    phone = params[:patron][:phone]
+    phone = params[:patron][:smsalertnumber]
     smsalertnumber = params[:patron][:smsalertnumber]
     email = params[:patron][:email]
     lang = params[:patron][:lang]
@@ -34,7 +30,6 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "accept_text", code: "MISSING_ACCEPT_TEXT", detail: "accept_text is missing."}) if accept_text.blank?
 
     error_list.push({field: "personalnumber", code: "PERSONALNUMBER_FORMAT_ERROR", detail: "personalnumber format error."}) if !Patron.validate_personalnumber(personalnumber)
-    error_list.push({field: "smsalertnumber", code: "SMSALERTNUMBER_FORMAT_ERROR", detail: "smsalertnumber format error."}) if !Patron.validate_phonenumber(smsalertnumber)
     error_list.push({field: "email", code: "EMAIL_FORMAT_ERROR", detail: "email format error."}) if !Patron.validate_email(email)
     error_list.push({field: "lang", code: "LANG_FORMAT_ERROR", detail: "lang format error."}) if !Patron.validate_lang(lang)
     error_list.push({field: "messaging_format", code: "MESSAGING_FORMAT_FORMAT_ERROR", detail: "messaging format format error."}) if !validate_messaging_format(messaging_format)
@@ -45,10 +40,11 @@ class Api::PatronsController < ApplicationController
       error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
     elsif messaging_format.eql?("email")
       error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
+      smsalertnumber = nil
     elsif messaging_format.eql?("sms_email")
       error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
       error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
-    else # paper
+    else
       messaging_format = nil
     end
 
@@ -61,6 +57,7 @@ class Api::PatronsController < ApplicationController
       return
     end
 
+
     parameter_list = {
       personalnumber: personalnumber,
       categorycode: categorycode,
@@ -70,11 +67,7 @@ class Api::PatronsController < ApplicationController
       address: address,
       zipcode: zipcode,
       city: city,
-      B_address: b_address,
-      B_city: b_city,
-      B_zipcode: b_zipcode,
       phone: phone,
-      mobile: smsalertnumber,
       smsalertnumber: smsalertnumber,
       email: email,
       lang: lang,
@@ -97,6 +90,6 @@ class Api::PatronsController < ApplicationController
 private
   def validate_messaging_format messaging_format
     return true if messaging_format.blank?
-    return ["paper", "sms", "email", "sms_email"].include?(messaging_format)
+    return ["sms", "email", "sms_email"].include?(messaging_format)
   end
 end
