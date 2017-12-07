@@ -86,8 +86,10 @@
   <hr>
   <h2>{{t 'patron.message_header'}}</h2>
   <div class="row">
+    <div class="col-md-12">
+    <label for="message_pref">{{t 'patron.message_pref'}}</label>
+    </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <label class="col-md-12" for="message_pref">{{t 'patron.message_pref'}}</label>
       <div class="form-group">
         {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
             {{#each model.messagePref as |pref|}}
@@ -132,14 +134,14 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6">
       <div class="{{has-error errors.errors 'accept_text'}}">
-        <label for="accept_text" class="special-label">
         <div class="checkbox">
-          {{input type="checkbox" name="accept_text" checked=terms_accepted}}
+           <label for="accept_text">
+          {{input id="accept_text" type="checkbox" name="accept_text" checked=terms_accepted}}
           <span class="text-danger error-msg {{has-error errors.errors 'accept_text'}}">{{t (get-error-msg errors.errors 'accept_text')}}</span>
           <span class="help-block">{{t 'patron.accept_text_help_block'}}</span>
           <span class="help-block">{{t 'patron.pul_link'}}</span>
+           </label>
         </div>
-        </label>
       </div>
     </div>
   </div>
