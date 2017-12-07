@@ -3,7 +3,7 @@ export default {
     "headers": {
       "logoPrintUrl": '/gu_logo_sv_high.png',
       "level1": 'Göteborgs universitetsbibliotek',
-      "level2": 'Bibliotekskort',
+      "level2": 'Ansök om bibliotekskort',
     },
   },
   "components": {
@@ -11,35 +11,32 @@ export default {
   },
 
   "application": {
-    "title": "Bibliotekskort"
+    "title": "Ansök om bibliotekskort - Göteborgs universitetsbibliotek"
 
   },
   "patron": {
-    "header": 'Ansökan om bibliotekskort',
-    "sub_header": 'Obs! Endast för dig som inte redan har bibliotekskort vid GUB eller GU-kort.',
-    "is_required": '(obligatoriskt)',
+    "header": 'Ansök om bibliotekskort',
+    "sub_header": 'Du som har fast bostad i Sverige och är över 15 år kan få ett bibliotekskort. För studenter och anställda vid Göteborgs universitet fungerar GU-kortet som bibliotekskort.',
 
-
-    "form_error_header": 'Formuläret innehåller felaktigheter. Var vänlig rätta till dessa och försök igen.',
+    "form_error_header": 'Formuläret innehåller felaktigheter.',
     "personalnumber": 'Personnummer',
-    "personalnumber_help_block": 'Ange 12 siffror utan bindestreck (ÅÅÅÅMMDDNNNN)',
+    "personalnumber_help_block": '12 siffror utan bindestreck (ÅÅÅÅMMDDNNNN)',
     "firstname": 'Förnamn',
     "surname": 'Efternamn',
     "address1_header": "Adress",
-    "address": 'Adress',
+    "address": 'Gatuadress',
     "zipcode": 'Postnummer',
-    "city": 'Stad',
-    "smsalertnumber": 'Mobilnummer för sms',
+    "city": 'Ort',
+    "smsalertnumber": 'Mobilnummer',
     'phonenumber': 'Telefonnummer',
     "phone_help_block": 'Ange endast siffror',
-    'email': 'Epostadress',
+    'email': 'E-postadress',
     'message_header': 'Meddelanden från biblioteket',
     'message_pref': 'Hur vill du få påminnelser och aviseringar?',
-    'lang': 'Välj språk',
-    'accept_text': 'Godkänn',
-    'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/(sv)/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
-    'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Information om hantering av personuppgifter (pdf)</a>",
-    "submit": 'Skicka',
+    'lang': 'Språk i påminnelser och aviseringar',
+    'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/%3C-en,sv%3E/lana/regler/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
+    'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/regler/pul.pdf' target='_blank'>Om hantering av personuppgifter (pdf)</a>",
+    "submit": 'Skicka ansökan',
     "category": "Användarkategori",
     "sv": "Svenska",
     "en": "Engelska",
@@ -48,22 +45,22 @@ export default {
 
   "error_codes": {
     "MISSING_PERSONALNUMBER": 'Personnummer är obligatoriskt',
-    "MISSING_CATEGORYCODE": 'Låntagarkategori är obligatoriskt',
+    "MISSING_CATEGORYCODE": 'Användarkategori är obligatoriskt',
     "MISSING_FIRSTNAME": 'Förnamn är obligatoriskt',
     "MISSING_SURNAME": 'Efternamn är obligatoriskt',
-    "MISSING_ADDRESS": 'Adress är obligatoriskt',
+    "MISSING_ADDRESS": 'Gatuadress är obligatoriskt',
     "MISSING_ZIPCODE": 'Postnummer är obligatiriskt',
-    "MISSING_CITY": 'Stad är obligatoriskt',
+    "MISSING_CITY": 'Ort är obligatoriskt',
     "MISSING_LANG": 'Språk är obligatoriskt',
     "MISSING_MESSAGING_FORMAT": 'Meddelandeformat är obligatoriskt',
     "MISSING_ACCEPT_TEXT": "Du måste acceptera reglerna",
-    "MISSING_SMSALERTNUMBER": 'Mobilnummer för sms-utskick är obligatoriskt',
+    "MISSING_SMSALERTNUMBER": 'Mobilnummer är obligatoriskt',
     "MISSING_EMAIL": 'E-postadress är obligatoriskt',
 
     "INVALID_CATEGORYCODE": 'Ogiltig låntagarkategori',
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
-    "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer för sms-utskick',
+    "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer',
     "EMAIL_FORMAT_ERROR": 'Felaktig e-postadress',
     "LANG_FORMAT_ERROR": 'Felaktigt språk',
     "MESSAGING_FORMAT_FORMAT_ERROR": 'Felaktigt meddelandeformat',
@@ -72,10 +69,10 @@ export default {
   },
 
   "confirm": {
-    "header": 'Tack för din registrering',
-    "extra_info": 'Du hämtar ut dit bibliotekskort på något av <a href="#">våra bibliotek.</a> Ta med dig giltig legitimation. Om du är distansstudent vid Göteborgs universitet kan du kontakta biblioteket för att få dit kort hemskickat.',
-    "extra_info_2": 'När du beställer material lägger biblioteket det på en öppen avhämtningshylla med ditt namn synligt. Kontakta biblioteket om du istället vill hämta dina beställningar i informationsdisken',
-    "contact_library_link": '<a href="#">Kontakta biblioteket</a>'
+    "header": 'Din ansökan är skickad!',
+    "extra_info": 'Du hämtar ut ditt bibliotekskort på något av <a target="_blank" href="http://www.ub.gu.se/%3C-en,sv%3E/bibliotek/">våra bibliotek</a>. Ta med dig giltig legitimation. Om du är distansstudent vid Göteborgs universitet kan du kontakta biblioteket för att få ditt kort hemskickat.',
+    "extra_info_2": 'När du beställer material lägger biblioteket det på en öppen avhämtningshylla med ditt namn synligt. Kontakta biblioteket om du istället vill hämta dina beställningar i informationsdisken.',
+    "contact_library_link": '<a target="_blank" href="http://www.ub.gu.se/%3C-en,sv%3E/kontakta/">Kontakta biblioteket</a>'
   }
 
 };
