@@ -1,11 +1,11 @@
 <div class="row">
 <h1 class="col-md-12">{{t 'patron.header'}}</h1>
-<p class="col-xs-12 col-sm-8">{{t 'patron.sub_header'}}</p>
+<p class="col-xs-12 col-sm-10 col-md-8">{{t 'patron.sub_header'}}</p>
 </div>
 {{#if errors}}
 <div class="row">
-  <div class="col-xs-12 col-sm-10">
-    <div class="alert alert-danger col-sm-8" role="alert">
+  <div class="col-xs-12 col-sm-10 col-md-8">
+    <div class="alert alert-danger" role="alert">
         <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{t 'patron.form_error_header'}} </p>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class="row">
     <label class="col-md-12" for="personalnumber">{{t 'patron.personalnumber'}} </label>
     <span class="help-block col-md-12">{{t 'patron.personalnumber_help_block'}}</span>
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'personalnumber'}}">
         <span class="text-danger error-msg {{has-error errors.errors 'personalnumber'}}">{{t (get-error-msg errors.errors 'personalnumber')}}</span>
         {{input name="personalnumber" id="personalnumber" autofocus="true" value=model.patron.personalnumber class="form-control"}}
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'firstname'}}">
         <label for="firstname">{{t 'patron.firstname'}} </label>
         <span class="text-danger error-msg {{has-error errors.errors 'firstname'}}">{{t (get-error-msg errors.errors 'firstname')}}</span>
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'surname'}}">
         <label for="surname">{{t 'patron.surname'}} </label>
         <span class="text-danger error-msg {{has-error errors.errors 'surname'}}">{{t (get-error-msg errors.errors 'surname')}}</span>
@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'categorycode'}}">
         <label for="message_pref">{{t 'patron.category'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'categorycode'}}">{{t (get-error-msg errors.errors 'categorycode')}}</span>
@@ -57,7 +57,7 @@
   <hr>
   <h2>{{t 'patron.address1_header'}}</h2>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'address'}}">
         <label for="address">{{t 'patron.address'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'address'}}">{{t (get-error-msg errors.errors 'address')}}</span>
@@ -66,7 +66,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'zipcode'}}">
         <label for="zipcode">{{t 'patron.zipcode'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'zipcode'}}">{{t (get-error-msg errors.errors 'zipcode')}}</span>
@@ -75,7 +75,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'city'}}">
         <label for="city">{{t 'patron.city'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'city'}}">{{t (get-error-msg errors.errors 'city')}}</span>
@@ -89,7 +89,7 @@
     <div class="col-md-12">
     <label for="message_pref">{{t 'patron.message_pref'}}</label>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group">
         {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
             {{#each model.messagePref as |pref|}}
@@ -100,7 +100,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'email'}}">
         <label for="email">{{t 'patron.email'}} {{#unless email_required}}<span class="optinally-text">({{t 'patron.optionally'}})</span>{{/unless}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'email'}}">{{t (get-error-msg errors.errors 'email')}}</span>
@@ -109,7 +109,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'smsalertnumber'}}">
         <label for="smsalertnumber">{{#if mobile_required}} {{t 'patron.smsalertnumber'}} {{else}} {{t 'patron.phonenumber'}} {{/if}}{{#unless mobile_required}}<span class="optinally-text">({{t 'patron.optionally'}})</span>{{/unless}}</label>
          <span class="help-block">{{t 'patron.phone_help_block'}}</span>
@@ -119,7 +119,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group">
         <label for="language_pref">{{t 'patron.lang'}}</label>
         {{#x-select class="form-control" value=i18n.locale action=(action "selectLang") as |xs|}}
@@ -132,13 +132,13 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="col-xs-12 col-sm-8 col-md-6">
       <div class="{{has-error errors.errors 'accept_text'}}">
         <div class="checkbox">
            <label for="accept_text">
           {{input id="accept_text" type="checkbox" name="accept_text" checked=terms_accepted}}
           <span class="text-danger error-msg {{has-error errors.errors 'accept_text'}}">{{t (get-error-msg errors.errors 'accept_text')}}</span>
-          <span class="help-block">{{t 'patron.accept_text_help_block'}}</span>
+          <span class="help-block checkbox-help-block">{{t 'patron.accept_text_help_block'}}</span>
           <span class="help-block">{{t 'patron.pul_link'}}</span>
            </label>
         </div>
@@ -146,7 +146,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-xs-12">
       <button type="submit" {{action 'submit'}} class="btn btn-lg btn-primary btn-submit">{{t 'patron.submit'}}</button>
     </div>
   </div>
