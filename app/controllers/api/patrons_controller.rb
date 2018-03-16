@@ -4,7 +4,6 @@ class Api::PatronsController < ApplicationController
   def create
     personalnumber = params[:patron][:personalnumber]
     categorycode = params[:patron][:categorycode]
-    branchcode = "44"
     surname = params[:patron][:surname]
     firstname = params[:patron][:firstname]
     address = params[:patron][:address]
@@ -61,7 +60,8 @@ class Api::PatronsController < ApplicationController
     parameter_list = {
       personalnumber: personalnumber,
       categorycode: categorycode,
-      branchcode: branchcode,
+      branchcode: "44",
+      debarments: "wr",
       surname: surname,
       firstname: firstname,
       address: address,
