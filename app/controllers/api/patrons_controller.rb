@@ -36,12 +36,20 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "categorycode", code: "INVALID_CATEGORYCODE", detail: "invalid category code."}) if !CategoryCode.validate(categorycode)
 
     if messaging_format.eql?("sms")
-      error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
+      if smsalertnumber.blank?
+        error_list.push({field: "smsalertnumber_blank", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."})
+      else
+        error_list.push({field: "smsalertnumber", code: "MISFORMATTED_SMSALERTNUMBER", detail: "smsalertnumber is misformatted."}) if !Patron.validate_phonenumber(smsalertnumber)
+      end
     elsif messaging_format.eql?("email")
       error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
       smsalertnumber = nil
     elsif messaging_format.eql?("sms_email")
-      error_list.push({field: "smsalertnumber", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if smsalertnumber.blank?
+      if smsalertnumber.blank?
+        error_list.push({field: "smsalertnumber_blank", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."})
+      else
+        error_list.push({field: "smsalertnumber", code: "MISFORMATTED_SMSALERTNUMBER", detail: "smsalertnumber is misformatted."}) if !Patron.validate_phonenumber(smsalertnumber)
+      end
       error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
     else
       messaging_format = nil

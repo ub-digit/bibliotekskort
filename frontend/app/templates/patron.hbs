@@ -114,6 +114,7 @@
         <label for="smsalertnumber">{{#if mobile_required}} {{t 'patron.smsalertnumber'}} {{else}} {{t 'patron.phonenumber'}} {{/if}}{{#unless mobile_required}}<span class="optinally-text">({{t 'patron.optionally'}})</span>{{/unless}}</label>
          <span class="help-block">{{t 'patron.phone_help_block'}}</span>
         <span class="text-danger error-msg {{has-error errors.errors 'smsalertnumber'}}">{{t (get-error-msg errors.errors 'smsalertnumber')}}</span>
+        <span class="text-danger error-msg {{has-error errors.errors 'smsalertnumber_blank'}}">{{t (get-error-msg errors.errors 'smsalertnumber_blank')}}</span>
         {{input name="smsalertnumber" id="smsalertnumber" value=model.patron.smsalertnumber class="form-control"}}
       </div>
     </div>
