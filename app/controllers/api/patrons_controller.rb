@@ -40,7 +40,7 @@ class Api::PatronsController < ApplicationController
       if smsalertnumber.blank?
         error_list.push({field: "smsalertnumber_blank", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."})
       else
-        error_list.push({field: "smsalertnumber", code: "MISFORMATTED_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if !Patron.validate_phonenumber(smsalertnumber)
+        error_list.push({field: "smsalertnumber", code: "MISFORMATTED_SMSALERTNUMBER", detail: "smsalertnumber is missing is misformatted."}) if !Patron.validate_phonenumber(smsalertnumber)
       end
     elsif messaging_format.eql?("email")
       error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
@@ -49,7 +49,7 @@ class Api::PatronsController < ApplicationController
       if smsalertnumber.blank?
         error_list.push({field: "smsalertnumber_blank", code: "MISSING_SMSALERTNUMBER", detail: "smsalertnumber is missing."})
       else
-        error_list.push({field: "smsalertnumber", code: "MISFORMATTED_SMSALERTNUMBER", detail: "smsalertnumber is missing."}) if !Patron.validate_phonenumber(smsalertnumber)
+        error_list.push({field: "smsalertnumber", code: "MISFORMATTED_SMSALERTNUMBER", detail: "smsalertnumber is misformatted."}) if !Patron.validate_phonenumber(smsalertnumber)
       end
       error_list.push({field: "email", code: "MISSING_EMAIL", detail: "email is missing."}) if email.blank?
     else
