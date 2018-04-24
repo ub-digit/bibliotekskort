@@ -33,7 +33,8 @@ class Patron
   end
 
   def self.validate_phonenumber phonenumber
-    return true if phonenumber.blank?
+    return false if phonenumber.length < 8
+    return false if phonenumber.starts_with?("00")
     return !!phonenumber.match(/^0\d+$/)
   end
 

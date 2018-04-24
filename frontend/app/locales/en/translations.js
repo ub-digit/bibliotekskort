@@ -29,7 +29,7 @@ export default {
     "city": 'City',
     "smsalertnumber": 'Mobile number',
     'phonenumber': 'Telephone number',
-    "phone_help_block": 'Only digits',
+    "phone_help_block": 'Enter only digits as 07XXXXXXXX',
     'email': 'E-mail address',
     'message_header': 'Messages from the library',
     'message_pref': 'How would you like reminders and notifications?',
@@ -55,6 +55,7 @@ export default {
     "MISSING_MESSAGING_FORMAT": 'Message format is mandatory',
     "MISSING_ACCEPT_TEXT": "You have to accept the library's rules",
     "MISSING_SMSALERTNUMBER": 'Mobile number is mandatory',
+    "MISFORMATTED_SMSALERTNUMBER": "Incorrect mobile number",
     "MISSING_EMAIL": 'E-mail address is mandatory',
 
     "INVALID_CATEGORYCODE": 'Invalid user category',
