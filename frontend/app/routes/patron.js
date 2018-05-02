@@ -34,8 +34,7 @@ export default Ember.Route.extend({
   actions: {
     submit() {
       let model = this.controller.get('model.patron');
-      var self = this;
-      model.save().then((response) => {
+      model.save().then(() => {
         this.transitionTo('confirm');
       }, (error) => {
         this.get('controller').set('errors', error.errors);

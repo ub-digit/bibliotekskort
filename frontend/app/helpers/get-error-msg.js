@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export function getErrorMsg(params /*, hash*/ ) {
-  i18n: Ember.inject.service();
   let errors = params[0];
 
   if (errors) {

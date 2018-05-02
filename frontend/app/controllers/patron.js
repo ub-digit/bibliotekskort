@@ -30,15 +30,15 @@ export default Ember.Controller.extend({
   }.observes('errors'),
 
   actions: {
-    selectMessagePref(value, event) {
+    selectMessagePref(value) {
       this.get("model.patron").set('messaging_format', value);
     },
 
-    selectCategoryCode(value, event) {
+    selectCategoryCode(value) {
       this.get("model.patron").set('categorycode', value);
     },
 
-    selectLang(value, event) {
+    selectLang(value) {
       if (value === "sv") {
         this.get("model.patron").set('lang', 'sv-SE');
       }
