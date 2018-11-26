@@ -49,7 +49,7 @@ export default {
     "MISSING_FIRSTNAME": 'Förnamn är obligatoriskt',
     "MISSING_SURNAME": 'Efternamn är obligatoriskt',
     "MISSING_ADDRESS": 'Gatuadress är obligatoriskt',
-    "MISSING_ZIPCODE": 'Postnummer är obligatiriskt',
+    "MISSING_ZIPCODE": 'Postnummer är obligatoriskt',
     "MISSING_CITY": 'Ort är obligatoriskt',
     "MISSING_LANG": 'Språk är obligatoriskt',
     "MISSING_MESSAGING_FORMAT": 'Meddelandeformat är obligatoriskt',
