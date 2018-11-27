@@ -34,7 +34,7 @@ export default {
     'message_header': 'Meddelanden från biblioteket',
     'message_pref': 'Hur vill du få påminnelser och aviseringar?',
     'lang': 'Språk i påminnelser och aviseringar',
-    'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/%3C-en,sv%3E/lana/'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
+    'accept_text_help_block': "Jag har tagit del av <a target='_blank' href='http://www.ub.gu.se/lana/regler-for-anvandning-av-goteborgs-universitetsbibliotek.pdf'>Regler för användning av Göteborgs universitetsbibliotek</a> och förbinder mig att följa dem.",
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/pul.pdf' target='_blank'>Om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka ansökan',
     "category": "Användarkategori",

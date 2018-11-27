@@ -34,7 +34,7 @@ export default {
     'message_header': 'Messages from the library',
     'message_pref': 'How would you like reminders and notifications?',
     'lang': 'Language in reminders and notifications',
-    'accept_text_help_block': "I confirm that I am familiar with the  <a target='_blank' href='http://www.ub.gu.se/%3C-sv,en%3E/lana/'>Rules for the use of Gothenburg University Library</a> and undertake to follow these rules.",
+    'accept_text_help_block': "I confirm that I am familiar with the  <a target='_blank' href='http://www.ub.gu.se/lana/rules-for-the-use-of-gothenburg-university-library.pdf'>Rules for the use of Gothenburg University Library</a> and undertake to follow these rules.",
     'pul_link': "<a href='http://www.ub.gu.se/(en)/lana/pul.pdf' target='_blank'>About the processing of personal data (pdf)</a>",
     "submit": 'Send application',
     "category": "User category",
