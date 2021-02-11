@@ -4,5 +4,4 @@ Rails.application.routes.draw do
     get 'message_prefs', to: 'message_prefs#index'
     get 'category_codes', to: 'category_codes#index'
   end
-  mount_ember_app :frontend, to: "/"
 end
