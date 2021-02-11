@@ -1,7 +1,9 @@
 import ActiveModelAdapter from 'active-model-adapter';
+import ENV from '../config/environment';
 
 export default ActiveModelAdapter.extend({
-  namespace: '/api',
+  namespace: 'api',
+  host: ENV.APP.serviceURL,
 
   handleResponse(status, header, payload) {
     if (404 === status) {
