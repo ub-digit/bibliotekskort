@@ -50,7 +50,7 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'font-src': "'self'",
+    'font-src': "'self' webresources.gu.se",
     'img-src': "'self'",
     'style-src': "'self'",
     'style-src': "'self' 'unsafe-inline'",
