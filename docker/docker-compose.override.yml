@@ -2,9 +2,6 @@ version: '3.7'
 services:
   frontend:
     image: docker.ub.gu.se/ember-dev:3.14.0
-    environment:
-      - BACKEND_SERVICE_HOSTNAME=${BACKEND_HOSTNAME}
-      - BACKEND_SERVICE_PORT=${BACKEND_HOST_PORT}
     ports:
       # server
       - ${FRONTEND_HOST_PORT}:4200
@@ -20,4 +17,3 @@ services:
       - secrets.env
     volumes:
       - ../:/usr/src/app
-    command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
