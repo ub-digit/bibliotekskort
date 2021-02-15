@@ -2,8 +2,9 @@ version: '3.7'
 services:
   frontend:
     environment:
-     - EMBER_ENVIRONMENT=${ENVIRONMENT}
-     - BACKEND_SERVICE_HOSTNAME=${BACKEND_HOSTNAME}
+      - EMBER_ENVIRONMENT=${ENVIRONMENT}
+      - BACKEND_SERVICE_HOSTNAME=${BACKEND_HOSTNAME}
+      - BACKEND_SERVICE_PORT=${BACKEND_SERVICE_PORT}
     # Keep the stdin open, so we can attach to our app container's process
     # and do things such as debugging, etc
     stdin_open: true
@@ -18,5 +19,6 @@ services:
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       - KOHA_USER=${KOHA_USER}
       - KOHA_SVC_URL=${KOHA_SVC_URL}
+    command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
     ports:
       - ${BACKEND_HOST_PORT}:${RAILS_PORT}
