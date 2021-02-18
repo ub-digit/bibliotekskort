@@ -16,6 +16,7 @@ services:
     environment:
       - RAILS_ENV=${ENVIRONMENT}
       - RAILS_PORT=${RAILS_PORT}
+      - RAILS_LOG_TO_STDOUT=1
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       - KOHA_USER=${KOHA_USER}
       - KOHA_SVC_URL=${KOHA_SVC_URL}
