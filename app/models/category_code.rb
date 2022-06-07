@@ -8,7 +8,6 @@ class CategoryCode
      {id: "SU", label_sv: "Internationell student vid GU", label_en: "International student at GU"},
      {id: "FX", label_sv: "Internationell gästforskare vid GU", label_en: "International visiting researcher at GU"},
      {id: "S",  label_sv: "Student vid GU", label_en: "Student at GU"},
-     {id: "FI", label_sv: "Forskare vid IT-fakulteten", label_en: "Researcher: IT Faculty"},
      {id: "GU", label_sv: "Personal vid GU", label_en: "Staff at GU"}
     ]
   end
