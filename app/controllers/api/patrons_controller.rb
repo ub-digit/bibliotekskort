@@ -1,5 +1,4 @@
 class Api::PatronsController < ApplicationController
-  skip_forgery_protection
 
   def create
     personalnumber = params[:patron][:personalnumber]
