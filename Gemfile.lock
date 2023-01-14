@@ -161,8 +161,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    sqlite3 (1.5.4)
-      mini_portile2 (~> 2.8.0)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -185,7 +183,6 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.4)
   rest-client
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
