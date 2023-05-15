@@ -72,7 +72,7 @@ export default {
   "confirm": {
     "header": 'You can pick up your library card now!',
     "extra_info": 'Pick up the library card at one of <a target="_blank" href="http://www.ub.gu.se/%3C-sv,en%3E/bibliotek/">our libraries</a>. Bring valid identification.',
-    "extra_info_2": 'When you request material, library staff will place it on open shelves with your name visible. Contact the library if you would like to pick up your reservations at the information desk instead.',
+    "extra_info_2": 'When you request materials, the library will place them on a shelf for requested items, close to the information desk. Contact the library if you would like to pick up your reservations at the information desk instead.',
     "contact_library_link": '<a target="_blank" href="http://www.ub.gu.se/%3C-sv,en%3E/kontakta/">Contact the library</a>'
   }
 
