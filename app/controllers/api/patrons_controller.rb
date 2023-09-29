@@ -4,6 +4,7 @@ class Api::PatronsController < ApplicationController
   def create
     personalnumber = params[:patron][:personalnumber]
     categorycode = params[:patron][:categorycode]
+    pin = params[:patron][:pin]
     surname = params[:patron][:surname]
     firstname = params[:patron][:firstname]
     address = params[:patron][:address]
@@ -19,6 +20,7 @@ class Api::PatronsController < ApplicationController
     error_list = Array.new
     error_list.push({field: "personalnumber", code: "MISSING_PERSONALNUMBER", detail: "personalnumber is missing."}) if personalnumber.blank?
     error_list.push({field: "categorycode", code: "MISSING_CATEGORYCODE", detail: "categorycode is missing."}) if categorycode.blank?
+    error_list.push({field: "pin", code: "MISSING_PIN", detail: "pin is missing."}) if pin.blank? && CategoryCode.requires_pin(categorycode)
     error_list.push({field: "surname", code: "MISSING_SURNAME", detail: "surname is missing."}) if surname.blank?
     error_list.push({field: "firstname", code: "MISSING_FIRSTNAME", detail: "firstname is missing."}) if firstname.blank?
     error_list.push({field: "address", code: "MISSING_ADDRESS", detail: "address is missing."}) if address.blank?
@@ -34,6 +36,7 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "messaging_format", code: "MESSAGING_FORMAT_FORMAT_ERROR", detail: "messaging format format error."}) if !validate_messaging_format(messaging_format)
 
     error_list.push({field: "categorycode", code: "INVALID_CATEGORYCODE", detail: "invalid category code."}) if !CategoryCode.validate(categorycode)
+    error_list.push({field: "pin", code: "INVALID_PIN", detail: "invalid pin."}) if !Patron.validate_pin(pin) && CategoryCode.requires_pin(categorycode)
 
     if messaging_format.eql?("sms")
       if smsalertnumber.blank?
@@ -80,7 +83,8 @@ class Api::PatronsController < ApplicationController
       email: email,
       lang: lang,
       messaging_format: messaging_format,
-      accept_text: accept_text
+      accept_text: accept_text,
+      pin: pin
     }
 
     res = Patron.add(parameter_list)

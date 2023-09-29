@@ -38,6 +38,7 @@ export default {
     'pul_link': "<a href='http://www.ub.gu.se/(sv)/lana/pul.pdf' target='_blank'>Om hantering av personuppgifter (pdf)</a>",
     "submit": 'Skicka ansökan',
     "category": "Användarkategori",
+    "pin": "PIN-kod (4 siffror)",
     "sv": "Svenska",
     "en": "Engelska",
     'optionally': 'valfritt'
@@ -46,6 +47,7 @@ export default {
   "error_codes": {
     "MISSING_PERSONALNUMBER": 'Personnummer är obligatoriskt',
     "MISSING_CATEGORYCODE": 'Användarkategori är obligatoriskt',
+    "MISSING_PIN": "PIN-kod är obligatoriskt",
     "MISSING_FIRSTNAME": 'Förnamn är obligatoriskt',
     "MISSING_SURNAME": 'Efternamn är obligatoriskt',
     "MISSING_ADDRESS": 'Gatuadress är obligatoriskt',
@@ -59,6 +61,7 @@ export default {
     "MISSING_EMAIL": 'E-postadress är obligatoriskt',
 
     "INVALID_CATEGORYCODE": 'Ogiltig låntagarkategori',
+    "INVALID_PIN": "Ogiltig PIN-kod",
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
     "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer',

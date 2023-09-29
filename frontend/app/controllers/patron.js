@@ -25,6 +25,15 @@ export default Ember.Controller.extend({
     return false;
   }),
 
+  show_pin: Ember.computed('model.patron.categorycode', function() {
+    // Only EX, UX, FR, FX and SR should show pin
+    let cc = this.get('model.patron.categorycode');
+    if (cc === 'EX' || cc === 'UX' || cc === 'FR' || cc === 'FX' || cc === 'SR') {
+      return true;
+    }
+    return false;
+  }),
+
   scrollTop: function() {
     window.scrollTo(0, 0);
   }.observes('errors'),

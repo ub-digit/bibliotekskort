@@ -54,6 +54,17 @@
       </div>
     </div>
   </div>
+  {{#if show_pin}}
+  <div class="row">
+    <div class="col-sm-8 col-md-6 col-lg-4">
+      <div class="form-group {{has-error errors.errors 'pin'}}">
+        <label for="pin">{{t 'patron.pin'}} </label>
+        <span class="text-danger error-msg {{has-error errors.errors 'pin'}}">{{t (get-error-msg errors.errors 'pin')}}</span>
+        {{input name="pin" id="pin" maxlength="4" size="4" value=model.patron.pin class="form-control"}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
   <hr>
   <h2>{{t 'patron.address1_header'}}</h2>
   <div class="row">

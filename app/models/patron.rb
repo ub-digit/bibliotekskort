@@ -48,6 +48,11 @@ class Patron
     return lang.eql?("en") || lang.eql?("sv-SE")
   end
 
+  def self.validate_pin pin
+    return true if pin.blank?
+    return !!pin.match(/^\d{4}$/)
+  end
+
   def self.get_config
     {
       svc_url: APP_CONFIG['koha']['svc_url'],
