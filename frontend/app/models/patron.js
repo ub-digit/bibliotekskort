@@ -14,5 +14,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   accept_text: DS.attr('string'),
   lang: DS.attr('string'),
-  messaging_format: DS.attr('string')
+  messaging_format: DS.attr('string'),
+  pin: DS.attr('string'),
 });

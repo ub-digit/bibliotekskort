@@ -15,4 +15,8 @@ class CategoryCode
   def self.validate category
     self.all.map{|code| code[:id]}.include?(category)
   end
+
+  def self.requires_pin category
+    ["EX", "UX", "FR", "FX", "SR"].include?(category)
+  end
 end

@@ -38,6 +38,7 @@ export default {
     'pul_link': "<a href='http://www.ub.gu.se/(en)/lana/pul.pdf' target='_blank'>About the processing of personal data (pdf)</a>",
     "submit": 'Send application',
     "category": "User category",
+    "pin": "PIN code (4 digits)",
     "sv": "Swedish",
     "en": "English",
     'optionally': 'optional'
@@ -46,6 +47,7 @@ export default {
   "error_codes": {
     "MISSING_PERSONALNUMBER": 'Swedish personal number is mandatory',
     "MISSING_CATEGORYCODE": 'User category is mandatory',
+    "MISSING_PIN": "PIN code is mandatory",
     "MISSING_FIRSTNAME": 'First name is mandatory',
     "MISSING_SURNAME": 'Last name is mandatory',
     "MISSING_ADDRESS": 'Street address is mandatory',
@@ -59,6 +61,7 @@ export default {
     "MISSING_EMAIL": 'E-mail address is mandatory',
 
     "INVALID_CATEGORYCODE": 'Invalid user category',
+    "INVALID_PIN": "Invalid PIN code",
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Invalid or incorrect personal number',
     "SMSALERTNUMBER_FORMAT_ERROR": 'Incorrect mobile phone number',
