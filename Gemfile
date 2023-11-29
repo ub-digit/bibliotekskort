@@ -6,9 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 7.1.1'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 6.4'
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,7 +38,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  #gem 'factory_bot_rails'
   gem 'database_cleaner'
 end
 
