@@ -38,7 +38,7 @@ export default {
     'pul_link': "<a href='https://www.gu.se/om-webbplatsen/behandling-av-personuppgifter' target='_blank'>Om hantering av personuppgifter</a>",
     "submit": 'Skicka ansökan',
     "category": "Användarkategori",
-    "pin": "PIN-kod (4 siffror)",
+    "pin": "Välj PIN-kod (4 siffror)",
     "sv": "Svenska",
     "en": "Engelska",
     'optionally': 'valfritt'

@@ -38,7 +38,7 @@ export default {
     'pul_link': "<a href='https://www.gu.se/en/about-the-website/processing-personal-data' target='_blank'>About the processing of personal data</a>",
     "submit": 'Send application',
     "category": "User category",
-    "pin": "PIN code (4 digits)",
+    "pin": "Choose PIN code (4 digits)",
     "sv": "Swedish",
     "en": "English",
     'optionally': 'optional'
