@@ -9,15 +9,14 @@
   }
   border-bottom: 1px solid #ccc;
   .gu-header {
-
     .logo {
       float: left;
       &.sv {
-        background: url('/gu_logo_sv_high.png');
+        background: url("/gu_logo_sv_high.png");
         background-size: 100%;
       }
       &.en {
-        background: url('/gu_logo_en_high.png');
+        background: url("/gu_logo_en_high.png");
         background-size: 100%;
       }
       width: 76px;
@@ -42,11 +41,13 @@
       margin-left: 14px;
       margin-top: 21px;
       max-width: 60%;
+      color: #515151;
       a {
-        color: #000;
+        color: #515151;
       }
       .level1 {
-        font-family:  NimbusSanNovCon-Bol, 'Nimbus Sans Novus Cond Bold', Arial Narrow, Helvetica, Arial, 'Lucida Grande', sans-serif;
+        font-family: tex_gyre_heros_cnbold, "Arial Narrow", Helvetica, Arial,
+          sans-serif;
         font-size: 19px;
         line-height: 19px;
         text-transform: uppercase;
@@ -55,12 +56,13 @@
           line-height: 22px;
         }
         @media (min-width: @screen-md-min) {
-          font-size: 28px;
+          font-size: 24px;
           line-height: 29px;
         }
       }
       .level2 {
-        font-family: NimbusSanNovCon-SemBol, "Nimbus Sans Novus Cond SemiBold", Arial Narrow, Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: tex_gyre_heros_cnbold, "Arial Narrow", Helvetica, Arial,
+          sans-serif;
         line-height: 15px;
         font-size: 15px;
         text-transform: uppercase;
@@ -87,7 +89,8 @@
         margin: 0;
         padding: 0;
         font-size: 15px;
-        font-family: NimbusSanNovCon-Med, "Nimbus Sans Novus Cond Medium", Arial Narrow, Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: NimbusSanNovCon-Med, "Nimbus Sans Novus Cond Medium",
+          Arial Narrow, Helvetica, Arial, "Lucida Grande", sans-serif;
         li {
           display: inline;
           list-style-type: none;
