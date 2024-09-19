@@ -23,9 +23,11 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "pin", code: "MISSING_PIN", detail: "pin is missing."}) if pin.blank? && CategoryCode.requires_pin(categorycode)
     error_list.push({field: "surname", code: "MISSING_SURNAME", detail: "surname is missing."}) if surname.blank?
     error_list.push({field: "firstname", code: "MISSING_FIRSTNAME", detail: "firstname is missing."}) if firstname.blank?
-    error_list.push({field: "address", code: "MISSING_ADDRESS", detail: "address is missing."}) if address.blank?
-    error_list.push({field: "zipcode", code: "MISSING_ZIPCODE", detail: "zipcode is missing."}) if zipcode.blank?
-    error_list.push({field: "city", code: "MISSING_CITY", detail: "city is missing."}) if city.blank?
+    if APP_CONFIG['address_mandatory']
+      error_list.push({field: "address", code: "MISSING_ADDRESS", detail: "address is missing."}) if address.blank?
+      error_list.push({field: "zipcode", code: "MISSING_ZIPCODE", detail: "zipcode is missing."}) if zipcode.blank?
+      error_list.push({field: "city", code: "MISSING_CITY", detail: "city is missing."}) if city.blank?
+    end
     error_list.push({field: "lang", code: "MISSING_LANG", detail: "lang is missing."}) if lang.blank?
     error_list.push({field: "messaging_format", code: "MISSING_MESSAGING_FORMAT", detail: "messaging_format is missing."}) if messaging_format.blank?
     error_list.push({field: "accept_text", code: "MISSING_ACCEPT_TEXT", detail: "accept_text is missing."}) if accept_text.blank?
