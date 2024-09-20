@@ -22,6 +22,7 @@ services:
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       - KOHA_USER=${KOHA_USER}
       - KOHA_SVC_URL=${KOHA_SVC_URL}
+      - ADDRESS_MANDATORY=${ADDRESS_MANDATORY}
     command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
     ports:
       - ${BACKEND_HOST_PORT}:${RAILS_PORT}
