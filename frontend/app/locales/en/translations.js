@@ -16,7 +16,7 @@ export default {
   },
   "patron": {
     "header": 'Apply for a library card',
-    "sub_header": 'Anyone above 15 years of age with a permanent residence in Sweden can get a library card. Students and staff at the university use their GU card as a library card.',
+    "sub_header": 'Anyone above 15 years of age can get a library card. Students and staff at the university use their GU card as a library card.',
 
     "form_error_header": 'The form contains errors.',
     "personalnumber": 'Swedish personal number',

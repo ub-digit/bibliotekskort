@@ -16,7 +16,7 @@ export default {
   },
   "patron": {
     "header": 'Ansök om bibliotekskort',
-    "sub_header": 'Du som har fast bostad i Sverige och är över 15 år kan få ett bibliotekskort. För studenter och anställda vid Göteborgs universitet fungerar GU-kortet som bibliotekskort.',
+    "sub_header": 'Du som är över 15 år kan få ett bibliotekskort. För studenter och anställda vid Göteborgs universitet fungerar GU-kortet som bibliotekskort.',
 
     "form_error_header": 'Formuläret innehåller felaktigheter.',
     "personalnumber": 'Personnummer',
