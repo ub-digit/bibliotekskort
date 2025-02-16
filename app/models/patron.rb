@@ -2,7 +2,7 @@ class Patron
   def self.add(parameter_list)
     config = get_config
     url = "#{config[:svc_url]}/members/create"
-    response = RestClient.post(url, parameter_list.merge({userid: config[:user], password: config[:password]}))
+    response = RestClient.post(url, parameter_list.merge({login_userid: config[:user], login_password: config[:password]}))
     if response && (response.code == 200 || response.code == 201)
       return {code: 201, msg: "Success"}
     else
@@ -14,7 +14,7 @@ class Patron
 
   def self.exists?(personalnumber)
     config = get_config
-    params = {userid: config[:user], password: config[:password], personalnumber: personalnumber}.to_query
+    params = {login_userid: config[:user], login_password: config[:password], personalnumber: personalnumber}.to_query
     url = "#{config[:svc_url]}/members/check?#{params}"
     response = RestClient.get(url)
     if (response && response.code == 200)
