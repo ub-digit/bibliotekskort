@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  btnSubmitDisabled: false,
   i18n: Ember.inject.service(),
   communication_lang: ['en','sv'],
   terms_accepted: false,
