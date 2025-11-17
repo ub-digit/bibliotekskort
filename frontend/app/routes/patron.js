@@ -33,10 +33,13 @@ export default Ember.Route.extend({
   },
   actions: {
     submit() {
+      this.controller.set('btnSubmitDisabled', true);
       let model = this.controller.get('model.patron');
       model.save().then(() => {
+        this.controller.set('btnSubmitDisabled', false);
         this.transitionTo('confirm');
       }, (error) => {
+        this.controller.set('btnSubmitDisabled', false);
         this.get('controller').set('errors', error.errors);
         this.transitionTo('patron');
       });
