@@ -39,6 +39,7 @@ export default {
     "submit": 'Skicka ansökan',
     "category": "Användarkategori",
     "pin": "Välj PIN-kod (4 siffror)",
+    "pin2": "Upprepa PIN-kod",
     "sv": "Svenska",
     "en": "Engelska",
     'optionally': 'valfritt'
@@ -48,6 +49,7 @@ export default {
     "MISSING_PERSONALNUMBER": 'Personnummer är obligatoriskt',
     "MISSING_CATEGORYCODE": 'Användarkategori är obligatoriskt',
     "MISSING_PIN": "PIN-kod är obligatoriskt",
+    "MISSING_PIN2": "PIN-kod är obligatoriskt",
     "MISSING_FIRSTNAME": 'Förnamn är obligatoriskt',
     "MISSING_SURNAME": 'Efternamn är obligatoriskt',
     "MISSING_ADDRESS": 'Gatuadress är obligatoriskt',
@@ -62,6 +64,9 @@ export default {
 
     "INVALID_CATEGORYCODE": 'Ogiltig låntagarkategori',
     "INVALID_PIN": "Ogiltig PIN-kod",
+    "INVALID_PIN2": "Ogiltig PIN-kod",
+    "PIN_MISMATCH": "PIN-koderna matchar inte",
+    "PIN2_MISMATCH": "PIN-koderna matchar inte",
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Felaktigt personnummer',
     "SMSALERTNUMBER_FORMAT_ERROR": 'Felaktigt mobilnummer',
