@@ -60,7 +60,16 @@
       <div class="form-group {{has-error errors.errors 'pin'}}">
         <label for="pin">{{t 'patron.pin'}} </label>
         <span class="text-danger error-msg {{has-error errors.errors 'pin'}}">{{t (get-error-msg errors.errors 'pin')}}</span>
-        {{input name="pin" id="pin" maxlength="4" size="4" value=model.patron.pin class="form-control"}}
+        {{input name="pin" id="pin" type="password" maxlength="4" size="4" value=model.patron.pin class="form-control"}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-md-6 col-lg-4">
+      <div class="form-group {{has-error errors.errors 'pin2'}}">
+        <label for="pin2">{{t 'patron.pin2'}} </label>
+        <span class="text-danger error-msg {{has-error errors.errors 'pin2'}}">{{t (get-error-msg errors.errors 'pin2')}}</span>
+        {{input name="pin2" id="pin2" type="password" maxlength="4" size="4" value=model.patron.pin2 class="form-control"}}
       </div>
     </div>
   </div>

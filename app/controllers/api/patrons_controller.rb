@@ -5,6 +5,7 @@ class Api::PatronsController < ApplicationController
     personalnumber = params[:patron][:personalnumber]
     categorycode = params[:patron][:categorycode]
     pin = params[:patron][:pin]
+    pin2 = params[:patron][:pin2]
     surname = params[:patron][:surname]
     firstname = params[:patron][:firstname]
     address = params[:patron][:address]
@@ -21,6 +22,7 @@ class Api::PatronsController < ApplicationController
     error_list.push({field: "personalnumber", code: "MISSING_PERSONALNUMBER", detail: "personalnumber is missing."}) if personalnumber.blank?
     error_list.push({field: "categorycode", code: "MISSING_CATEGORYCODE", detail: "categorycode is missing."}) if categorycode.blank?
     error_list.push({field: "pin", code: "MISSING_PIN", detail: "pin is missing."}) if pin.blank? && CategoryCode.requires_pin(categorycode)
+    error_list.push({field: "pin2", code: "MISSING_PIN2", detail: "repeat pin is missing."}) if pin2.blank? && CategoryCode.requires_pin(categorycode)
     error_list.push({field: "surname", code: "MISSING_SURNAME", detail: "surname is missing."}) if surname.blank?
     error_list.push({field: "firstname", code: "MISSING_FIRSTNAME", detail: "firstname is missing."}) if firstname.blank?
     if APP_CONFIG['address_mandatory']
@@ -39,6 +41,9 @@ class Api::PatronsController < ApplicationController
 
     error_list.push({field: "categorycode", code: "INVALID_CATEGORYCODE", detail: "invalid category code."}) if !CategoryCode.validate(categorycode)
     error_list.push({field: "pin", code: "INVALID_PIN", detail: "invalid pin."}) if !Patron.validate_pin(pin) && CategoryCode.requires_pin(categorycode)
+    error_list.push({field: "pin2", code: "INVALID_PIN2", detail: "invalid repeat pin."}) if !Patron.validate_pin(pin2) && CategoryCode.requires_pin(categorycode)
+    error_list.push({field: "pin", code: "PIN_MISMATCH", detail: "pin fields do not match."}) if Patron.validate_pin(pin) &&  Patron.validate_pin(pin2) && pin.present? && pin2.present? && pin != pin2 && CategoryCode.requires_pin(categorycode)
+    error_list.push({field: "pin2", code: "PIN2_MISMATCH", detail: "pin fields do not match."}) if Patron.validate_pin(pin) &&  Patron.validate_pin(pin2) && pin.present? && pin2.present? && pin != pin2 && CategoryCode.requires_pin(categorycode)
 
     if messaging_format.eql?("sms")
       if smsalertnumber.blank?

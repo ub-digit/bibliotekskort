@@ -39,6 +39,7 @@ export default {
     "submit": 'Send application',
     "category": "User category",
     "pin": "Choose PIN code (4 digits)",
+    "pin2": "Repeat PIN code",
     "sv": "Swedish",
     "en": "English",
     'optionally': 'optional'
@@ -48,6 +49,7 @@ export default {
     "MISSING_PERSONALNUMBER": 'Swedish personal number is mandatory',
     "MISSING_CATEGORYCODE": 'User category is mandatory',
     "MISSING_PIN": "PIN code is mandatory",
+    "MISSING_PIN2": "PIN code is mandatory",
     "MISSING_FIRSTNAME": 'First name is mandatory',
     "MISSING_SURNAME": 'Last name is mandatory',
     "MISSING_ADDRESS": 'Street address is mandatory',
@@ -62,6 +64,10 @@ export default {
 
     "INVALID_CATEGORYCODE": 'Invalid user category',
     "INVALID_PIN": "Invalid PIN code",
+    "INVALID_PIN2": "Invalid PIN code",
+    "PIN_MISMATCH": "PIN codes do not match",
+    "PIN2_MISMATCH": "PIN codes do not match",
+
 
     "PERSONALNUMBER_FORMAT_ERROR": 'Invalid or incorrect personal number',
     "SMSALERTNUMBER_FORMAT_ERROR": 'Incorrect mobile phone number',

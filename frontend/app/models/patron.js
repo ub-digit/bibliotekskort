@@ -16,4 +16,5 @@ export default DS.Model.extend({
   lang: DS.attr('string'),
   messaging_format: DS.attr('string'),
   pin: DS.attr('string'),
+  pin2: DS.attr('string'),
 });
