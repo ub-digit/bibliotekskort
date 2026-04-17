@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   personalnumber: DS.attr('string'),
+  cardnumber: DS.attr('string'),
   categorycode: DS.attr('string'),
   branchcode: DS.attr('string'),
   surname: DS.attr('string'),

@@ -78,9 +78,10 @@ export default {
   },
 
   "confirm": {
-    "header": 'Nu kan du hämta ditt bibliotekskort!',
-    "extra_info": 'Hämta ut bibliotekskortet på något av <a target="_blank" href="https://www.ub.gu.se/sv/bibliotek-och-oppettider">våra bibliotek</a>. Ta med giltig legitimation.',
-    "extra_info_2": 'När du beställer material lägger biblioteket det på en avhämtningshylla i närheten av informationsdisken. Kontakta biblioteket om du istället vill hämta dina beställningar i informationsdisken.',
+    "header": 'Nu kan du aktivera ditt bibliotekskort!',
+    "extra_info_1": 'Gå till något av <a target="_blank" href="https://www.ub.gu.se/sv/bibliotek-och-oppettider">våra bibliotek</a> för att aktivera ditt bibliotekskort. Ta med giltig legitimation.',
+    "extra_info_2": 'Numret för ditt bibliotekskort är',
+    "extra_info_3": 'När du beställer material lägger biblioteket det på en avhämtningshylla i närheten av informationsdisken. Kontakta biblioteket om du istället vill hämta dina beställningar i informationsdisken.',
     "contact_library_link": '<a target="_blank" href="https://www.ub.gu.se/sv/kontakta-oss">Kontakta biblioteket</a>'
   }
 
