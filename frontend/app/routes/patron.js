@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       patron: this.store.createRecord('patron', {
         personalnumber: '',
+        cardnumber: '',
         categorycode: '',
         branchcode: '',
         surname: '',
