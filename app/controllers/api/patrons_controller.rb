@@ -96,7 +96,8 @@ class Api::PatronsController < ApplicationController
 
     res = Patron.add(parameter_list)
     if res[:code] == 201
-      @response[:patron] = {id: 1234} #ember data requires an id to generate success.
+      # Set id = 1 since we only create one patron and then show the confirmation page.
+      @response[:patron] = {id: 1, cardnumber: res[:cardnumber]}
       render_json(201)
       return
     else

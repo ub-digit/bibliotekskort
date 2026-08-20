@@ -4,7 +4,9 @@ class Patron
     url = "#{config[:svc_url]}/members/create"
     response = RestClient.post(url, parameter_list.merge({login_userid: config[:user], login_password: config[:password]}))
     if response && (response.code == 200 || response.code == 201)
-      return {code: 201, msg: "Success"}
+      xml = Nokogiri::XML(response.body).remove_namespaces!
+      cardnumber = xml.search('//response/cardnumber').text
+      return {code: 201, msg: "Success", cardnumber: cardnumber}
     else
       return {code: 500, msg: "General error"}
     end
