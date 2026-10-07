@@ -44,9 +44,9 @@
   <div class="row">
     <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group {{has-error errors.errors 'categorycode'}}">
-        <label for="message_pref">{{t 'patron.category'}}</label>
+        <label for="category-code">{{t 'patron.category'}}</label>
         <span class="text-danger error-msg {{has-error errors.errors 'categorycode'}}">{{t (get-error-msg errors.errors 'categorycode')}}</span>
-        {{#x-select class="form-control" value="0" action=(action "selectCategoryCode") as |xs|}}
+        {{#x-select elementId="category-code" class="form-control" value="0" action=(action "selectCategoryCode") as |xs|}}
             {{#each model.categoryCodes as |pref|}}
               {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
             {{/each}}
@@ -107,11 +107,11 @@
   <h2>{{t 'patron.message_header'}}</h2>
   <div class="row">
     <div class="col-md-12">
-    <label for="message_pref">{{t 'patron.message_pref'}}</label>
+    <label for="message-pref">{{t 'patron.message_pref'}}</label>
     </div>
     <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group">
-        {{#x-select class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
+        {{#x-select elementId="message-pref" class="form-control" value="0" action=(action "selectMessagePref") as |xs|}}
             {{#each model.messagePref as |pref|}}
               {{#xs.option value=pref.id}}{{pref.label}}{{/xs.option}}
             {{/each}}
@@ -142,8 +142,8 @@
   <div class="row">
     <div class="col-sm-8 col-md-6 col-lg-4">
       <div class="form-group">
-        <label for="language_pref">{{t 'patron.lang'}}</label>
-        {{#x-select class="form-control" value=i18n.locale action=(action "selectLang") as |xs|}}
+        <label for="language-pref">{{t 'patron.lang'}}</label>
+        {{#x-select elementId="language-pref" class="form-control" value=i18n.locale action=(action "selectLang") as |xs|}}
           {{#each communication_lang as |lang|}}
           {{#xs.option value=lang }}{{t (concat 'patron.' lang)}}{{/xs.option}}
           {{/each}}

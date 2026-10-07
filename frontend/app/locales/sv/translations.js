@@ -2,6 +2,7 @@ export default {
   "home": {
     "headers": {
       "logoPrintUrl": '/gu_logo_sv_high.png',
+      "logoPrintLabel": 'Gå till Göteborgs universitets webbplats',
       "level1": 'Göteborgs universitetsbibliotek',
       "level2": 'Ansök om bibliotekskort',
     },

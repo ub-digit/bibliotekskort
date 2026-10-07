@@ -2,6 +2,7 @@ export default {
   "home": {
     "headers": {
       "logoPrintUrl": '/gu_logo_en_high.png',
+      "logoPrintLabel": 'Go to the Gothenburg University website',
       "level1": 'Gothenburg University Library',
       "level2": 'Apply for a library card',
     },
