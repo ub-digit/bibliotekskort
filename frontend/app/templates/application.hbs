@@ -1,11 +1,11 @@
 {{title (t 'application.title')}}
-<div class="gu-header-container">
+<header class="gu-header-container">
   <div class="container">
     <div class="row gu-header">
       <div class="col-xs-12">
         <div class="logo {{getLocale}}">
-          <a href="http://www.gu.se">
-            <img class="visible-print-block" src={{t 'home.headers.logoPrintUrl'}} />
+          <a href="http://www.gu.se" aria-label={{t 'home.headers.logoPrintLabel'}}>
+            <img class="visible-print-block" src={{t 'home.headers.logoPrintUrl'}} alt="" />
           </a>
         </div>
         <div class="headers">
@@ -24,8 +24,8 @@
       </div>
     </div>
   </div>
-</div>
+</header>
 
-<div class="container body-block">
+<main class="container body-block">
   {{outlet}}
-</div>
+</main>
